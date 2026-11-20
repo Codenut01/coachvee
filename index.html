@@ -952,37 +952,37 @@
             );
         };
 
-        // ── MINIMALIST FOOTER (Logo + Phone + Email Only; Social Omitted Pre-Launch) ──
+        // ── COMPACT FOOTER (Logo + Phone + Email Only; Social Omitted Pre-Launch) ──
         const Footer = ({ openModal }) => (
-            <footer id="footer" className="relative py-16 bg-[#1a1a1a] text-white overflow-hidden">
+            <footer id="footer" className="relative py-7 md:py-8 bg-[#1a1a1a] text-white overflow-hidden">
                 <div className="max-w-6xl mx-auto section-px relative z-10">
-                    <div className="flex flex-col md:flex-row items-center justify-between gap-10 pb-12 border-b border-white/10">
+                    <div className="flex flex-col md:flex-row items-center justify-between gap-5 pb-5 border-b border-white/10">
                         <div className="flex items-center justify-center md:justify-start">
-                            <div className="bg-white rounded-2xl px-5 py-3 shadow-md">
+                            <div className="bg-white rounded-xl px-3.5 py-1.5 shadow-sm">
                                 <SafeImage
                                     sources={ASSETS.logoFull}
                                     alt="Garden of Vee"
-                                    className="h-14 md:h-20 w-auto object-contain mix-blend-multiply"
+                                    className="h-10 md:h-12 w-auto object-contain mix-blend-multiply"
                                 />
                             </div>
                         </div>
 
-                        <div className="flex flex-col sm:flex-row items-center gap-8 sm:gap-12 md:gap-14 text-center sm:text-left">
+                        <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-8 text-center sm:text-left">
                             <div>
-                                <div className="text-[10px] uppercase tracking-[0.38em] font-bold text-[#D16B3D] mb-2">Phone</div>
+                                <div className="text-[9px] uppercase tracking-[0.3em] font-bold text-[#D16B3D] mb-0.5">Phone</div>
                                 <a
                                     href="tel:0785147472"
-                                    className="text-lg md:text-xl font-light text-white hover:text-[#D16B3D] transition-colors"
+                                    className="inline-flex items-center text-sm md:text-base font-light text-white hover:text-[#D16B3D] transition-colors"
                                 >
                                     {CONTACT_PHONE}
                                 </a>
                             </div>
                             <div className="max-w-full">
-                                <div className="text-[10px] uppercase tracking-[0.38em] font-bold text-[#D16B3D] mb-2">Email</div>
+                                <div className="text-[9px] uppercase tracking-[0.3em] font-bold text-[#D16B3D] mb-0.5">Email</div>
                                 <button
                                     type="button"
                                     onClick={() => openModal('general')}
-                                    className="text-base sm:text-lg md:text-xl font-light text-white hover:text-[#D16B3D] transition-colors break-words"
+                                    className="inline-flex items-center text-sm md:text-base font-light text-white hover:text-[#D16B3D] transition-colors break-words"
                                 >
                                     {CONTACT_EMAIL}
                                 </button>
@@ -990,16 +990,16 @@
                         </div>
                     </div>
 
-                    <div className="pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-[11px] text-gray-400 uppercase tracking-[0.22em] font-semibold text-center">
+                    <div className="pt-4 flex flex-col sm:flex-row justify-between items-center gap-3 text-[10px] text-gray-400 uppercase tracking-[0.2em] font-semibold text-center">
                         <div>© {new Date().getFullYear()} Garden of Vee. All rights reserved.</div>
                         <button
                             type="button"
                             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-                            className="hover:text-[#D16B3D] flex items-center space-x-3 group transition-colors duration-300"
+                            className="hover:text-[#D16B3D] inline-flex items-center space-x-2 group transition-colors duration-300"
                         >
                             <span>Back to Top</span>
-                            <div className="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center group-hover:border-[#D16B3D] group-hover:bg-[#D16B3D] group-hover:text-white transition-all duration-300">
-                                <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <div className="w-6 h-6 rounded-full border border-white/20 flex items-center justify-center group-hover:border-[#D16B3D] group-hover:bg-[#D16B3D] group-hover:text-white transition-all duration-300">
+                                <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 10l7-7m0 0l7 7m-7-7v18" />
                                 </svg>
                             </div>
@@ -1017,53 +1017,6 @@
                 e.currentTarget.style.setProperty('--card-y', (((e.clientY - r.top) / r.height) * 100) + '%');
             };
 
-            const quickCircles = [
-                {
-                    id: 'gather-experience',
-                    label: 'Gather Experience',
-                    icon: (
-                        <svg width="26" height="26" viewBox="0 0 30 30" fill="none">
-                            <circle cx="10" cy="10" r="3.5" stroke="currentColor" strokeWidth="1.4" />
-                            <circle cx="20" cy="10" r="3.5" stroke="currentColor" strokeWidth="1.4" />
-                            <circle cx="15" cy="20" r="3.5" stroke="currentColor" strokeWidth="1.4" />
-                            <path d="M13 12.5 L12 16.5M17 12.5 L18 16.5M13.5 10 L16.5 10" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" />
-                        </svg>
-                    ),
-                },
-                {
-                    id: 'retreat-experience',
-                    label: 'Retreat Experience',
-                    icon: (
-                        <svg width="26" height="26" viewBox="0 0 30 30" fill="none">
-                            <path d="M15 5 C15 5, 9 11, 9 17 C9 21.5, 11.5 24, 15 24 C18.5 24, 21 21.5, 21 17 C21 11, 15 5, 15 5Z" stroke="currentColor" strokeWidth="1.4" />
-                            <path d="M15 24 L15 27M10 16 C10 16, 6 15, 5 12M20 16 C20 16, 24 15, 25 12" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" />
-                        </svg>
-                    ),
-                },
-                {
-                    id: 'faith-experience',
-                    label: 'Faith Experience',
-                    icon: (
-                        <svg width="26" height="26" viewBox="0 0 30 30" fill="none">
-                            <path d="M15 6 L15 24M9 11 L21 11" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
-                            <circle cx="15" cy="6" r="1.5" fill="currentColor" opacity="0.5" />
-                        </svg>
-                    ),
-                },
-                {
-                    id: 'corporate-experience',
-                    label: 'Corporate Experience',
-                    icon: (
-                        <svg width="26" height="26" viewBox="0 0 30 30" fill="none">
-                            <rect x="6" y="16" width="4" height="8" rx="1" stroke="currentColor" strokeWidth="1.4" />
-                            <rect x="13" y="11" width="4" height="13" rx="1" stroke="currentColor" strokeWidth="1.4" />
-                            <rect x="20" y="7" width="4" height="17" rx="1" stroke="currentColor" strokeWidth="1.4" />
-                        </svg>
-                    ),
-                },
-            ];
-
-            // Matching exact card visual placement illustrated in bn.png
             const pillars = [
                 {
                     id: 'gather-experience',
@@ -1150,7 +1103,7 @@
                         </div>
                     </section>
 
-                    {/* 2. DARK SECTION: STREAMLINED WELCOME, 2-SENTENCE SUMMARY & MOBILE-ONLY INTERACTIVE CIRCLES */}
+                    {/* 2. DARK SECTION: STREAMLINED WELCOME & 2-SENTENCE SUMMARY */}
                     <section id="welcome" className="relative section-py bg-[#1a1a1a] text-white overflow-hidden">
                         <BackgroundBlob color="#D16B3D" size="420px" position={{ top: '-120px', right: '-120px' }} opacity={0.07} />
                         <div className="max-w-5xl mx-auto section-px relative z-10 text-center">
@@ -1167,31 +1120,10 @@
                                     <span className="text-[#D16B3D] italic">we host experiences that meet you there.</span>
                                 </h2>
 
-                                <p className="text-gray-300 font-light leading-relaxed max-w-2xl mx-auto mb-12 lg:mb-0" style={{ fontSize: 'clamp(0.95rem, 2vw, 1.125rem)' }}>
+                                <p className="text-gray-300 font-light leading-relaxed max-w-2xl mx-auto mb-0" style={{ fontSize: 'clamp(0.95rem, 2vw, 1.125rem)' }}>
                                     Garden of Vee creates intentional spaces for creative community, unhurried rest, spiritual reflection, and workplace renewal. Every experience is crafted to help you slow down, connect deeply, and simply belong.
                                 </p>
                             </RevealSection>
-
-                            {/* Shown only on smaller screens (<1024px) where the top menu tabs are collapsed */}
-                            <div className="lg:hidden">
-                                <StaggerContainer className="grid grid-cols-2 sm:grid-cols-4 gap-6 max-w-3xl mx-auto">
-                                    {quickCircles.map((circle) => (
-                                        <button
-                                            key={circle.id}
-                                            type="button"
-                                            onClick={() => setCurrentPage(circle.id)}
-                                            className="group flex flex-col items-center w-full focus:outline-none"
-                                        >
-                                            <span className="w-16 h-16 rounded-full border border-white/20 bg-white/5 flex items-center justify-center mb-3 text-white/85 group-hover:border-[#D16B3D] group-hover:bg-[#D16B3D] group-hover:text-white transition-all duration-300">
-                                                {circle.icon}
-                                            </span>
-                                            <span className="text-xs uppercase tracking-[0.16em] font-semibold text-gray-300 group-hover:text-[#D16B3D] transition-colors text-center">
-                                                {circle.label}
-                                            </span>
-                                        </button>
-                                    ))}
-                                </StaggerContainer>
-                            </div>
                         </div>
                     </section>
 
@@ -1272,7 +1204,6 @@
 
             return (
                 <motion.section initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="relative pt-28 pb-20 md:pt-36 md:pb-28 bg-[#1a1a1a] text-white min-h-screen overflow-hidden">
-                    {/* Candlelit dining table merged cleanly into background */}
                     <div className="absolute inset-0 pointer-events-none opacity-[0.18]">
                         <SafeImage
                             sources={ASSETS.diningPhoto}
