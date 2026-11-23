@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Garden of Vee | Breathe · Belong · Become</title>
-    <link rel="icon" type="image/png" sizes="192x192" href="/favi.png">
-    <link rel="shortcut icon" type="image/png" href="/favi.png">
-    <link rel="apple-touch-icon" href="/favi.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="favi.png">
+    <link rel="shortcut icon" type="image/png" href="favi.png">
+    <link rel="apple-touch-icon" href="favi.png">
     <meta name="description" content="Creating spaces for shared presence, creative expression, and spiritual reflection. Gather experiences, retreats, faith gatherings, and corporate team experiences.">
     <meta name="theme-color" content="#D16B3D">
     <link rel="canonical" href="https://gardenofvee.africa/">
@@ -21,7 +21,7 @@
     <meta name="twitter:description" content="Creating spaces for shared presence, creative expression, and spiritual reflection.">
     <meta name="twitter:image" content="https://gardenofvee.africa/ggh.png">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@200;300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@200;300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/framer-motion@10.16.4/dist/framer-motion.js"></script>
@@ -65,18 +65,24 @@
         }
 
         .font-display { font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif; }
+        .font-brand { font-family: 'Cinzel', 'Cormorant Garamond', Georgia, serif; }
 
         ::selection {
             background-color: rgba(209, 107, 61, 0.25);
             color: var(--clay-dark);
         }
 
-        /* ── GLASS ────────────────────────────────────────────── */
         .glass {
             background: rgba(255, 255, 255, 0.88);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
             border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+        }
+        .glass-nav {
+            background: rgba(244, 242, 238, 0.88);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
         }
         .glass-dark {
             background: rgba(255, 255, 255, 0.04);
@@ -85,7 +91,6 @@
             border: 1px solid rgba(255, 255, 255, 0.08);
         }
 
-        /* ── SPOTLIGHT CARD ──────────────────────────────────── */
         .spotlight-card { --card-x: 50%; --card-y: 50%; }
         .spotlight-card::after {
             content: '';
@@ -102,7 +107,6 @@
             .spotlight-card:hover::after { opacity: 1; }
         }
 
-        /* ── ANIMATIONS ──────────────────────────────────────── */
         @keyframes blob {
             0%, 100% { border-radius: 60% 40% 30% 70%/60% 30% 70% 40%; }
             25% { border-radius: 30% 60% 70% 40%/50% 60% 30% 60%; }
@@ -121,7 +125,6 @@
             }
         }
 
-        /* ── TOUCH / ACCESSIBILITY ───────────────────────────── */
         @media (pointer: coarse) {
             button, a, [role="button"] { min-height: 44px; }
             .nav-social-btn { width: 44px !important; height: 44px !important; }
@@ -131,16 +134,10 @@
             * { transition-duration: 0.01ms !important; }
         }
 
-        /* ── HERO FULL HEIGHT ────────────────────────────────── */
-        .hero-full {
-            min-height: 100svh;
-        }
-
-        /* ── RESPONSIVE SPACING ──────────────────────────────── */
+        .hero-full { min-height: 100svh; }
         .section-px { padding-left: clamp(1.25rem, 5vw, 3rem); padding-right: clamp(1.25rem, 5vw, 3rem); }
         .section-py { padding-top: var(--space-xl); padding-bottom: var(--space-xl); }
 
-        /* ── STANDARDIZED TYPOGRAPHY ACROSS EXPERIENCE PAGES ──── */
         .exp-heading {
             font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
             font-size: clamp(2.25rem, 5.5vw, 4.5rem);
@@ -148,23 +145,10 @@
             line-height: 1.08;
             letter-spacing: -0.01em;
         }
-        .exp-intro {
-            font-size: clamp(1rem, 2.2vw, 1.25rem);
-            font-weight: 300;
-            line-height: 1.75;
-        }
-        .exp-item-title {
-            font-size: clamp(1.2rem, 2.4vw, 1.45rem);
-            font-weight: 500;
-            line-height: 1.3;
-        }
-        .exp-item-desc {
-            font-size: 0.9375rem;
-            font-weight: 300;
-            line-height: 1.65;
-        }
+        .exp-intro { font-size: clamp(1rem, 2.2vw, 1.25rem); font-weight: 300; line-height: 1.75; }
+        .exp-item-title { font-size: clamp(1.2rem, 2.4vw, 1.45rem); font-weight: 500; line-height: 1.3; }
+        .exp-item-desc { font-size: 0.9375rem; font-weight: 300; line-height: 1.65; }
 
-        /* ── SELECT ARROW ────────────────────────────────────── */
         select {
             background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23999' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
             background-repeat: no-repeat;
@@ -175,7 +159,6 @@
             appearance: none;
         }
 
-        /* ── OVERFLOW GUARD (prevents 100vw scrollbar shift) ── */
         section, footer, main { max-width: 100%; overflow-x: hidden; }
     </style>
 </head>
@@ -191,7 +174,6 @@
         const INSTAGRAM_URL = 'https://instagram.com/gardenofvee';
         const FACEBOOK_URL = 'https://facebook.com/gardenofvee';
 
-        // ── SOCIAL ICONS ─────────────────────────────────────────────────
         const InstagramIcon = ({ className = 'w-4 h-4' }) => (
             <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                 <rect x="2.5" y="2.5" width="19" height="19" rx="5.5" />
@@ -206,51 +188,105 @@
             </svg>
         );
 
-        // ── ASSET CANDIDATE LISTS (Clean names + Hash names + Hosted fallback) ──
+        // ── HOME DIRECTORY BASE RESOLUTION ───────────────────────────────
+        const IS_FILE_PROTOCOL = window.location.protocol === 'file:';
+        const KNOWN_ROUTES = new Set([
+            'home',
+            'shared-moments', 'gather', 'gather-experience',
+            'retreats', 'retreat', 'retreat-experience',
+            'faith', 'faith-experience',
+            'team', 'corporate', 'corporate-experience',
+        ]);
+
+        const BASE_DIR = (() => {
+            try {
+                const path = window.location.pathname || '/';
+                if (IS_FILE_PROTOCOL || /\.[a-z0-9]+$/i.test(path) || path.endsWith('/')) {
+                    return new URL('./', window.location.href).href;
+                }
+                const seg = path.replace(/^\/+|\/+$/g, '').toLowerCase();
+                if (KNOWN_ROUTES.has(seg)) return window.location.origin + '/';
+                return new URL(path.replace(/\/?$/, '/'), window.location.origin).href;
+            } catch (e) {
+                return './';
+            }
+        })();
+
+        const BASE_PATH = (() => {
+            try {
+                if (IS_FILE_PROTOCOL) return '';
+                return new URL(BASE_DIR).pathname.replace(/\/+$/, '');
+            } catch (e) {
+                return '';
+            }
+        })();
+
+        const toBaseUrl = (relPath) => {
+            try {
+                return new URL(relPath.replace(/^\/+/, ''), BASE_DIR).href;
+            } catch (e) {
+                return relPath;
+            }
+        };
+
+        const dedupe = (arr) => Array.from(new Set(arr));
+
         const namedPaths = (baseNames = [], hashFilename = null) => {
             const exts = ['png', 'jpg', 'jpeg', 'webp'];
             const list = [];
+            exts.forEach((ext) => {
+                baseNames.forEach((name) => {
+                    list.push(/\.[a-z0-9]+$/i.test(name) ? toBaseUrl(name) : toBaseUrl(`${name}.${ext}`));
+                });
+            });
+            if (hashFilename) list.push(toBaseUrl(hashFilename));
+
             baseNames.forEach((name) => {
                 if (/\.[a-z0-9]+$/i.test(name)) {
-                    list.push(`/${name}`, `/_assets/media/${name}`, `/assets/${name}`, `/images/${name}`);
+                    list.push(`/${name}`, toBaseUrl(`_assets/media/${name}`), `/_assets/media/${name}`, toBaseUrl(`assets/${name}`), toBaseUrl(`images/${name}`));
                 } else {
                     exts.forEach((ext) => {
-                        list.push(`/${name}.${ext}`, `/_assets/media/${name}.${ext}`, `/assets/${name}.${ext}`, `/images/${name}.${ext}`);
+                        list.push(`/${name}.${ext}`, toBaseUrl(`_assets/media/${name}.${ext}`), `/_assets/media/${name}.${ext}`, toBaseUrl(`assets/${name}.${ext}`), toBaseUrl(`images/${name}.${ext}`));
                     });
                 }
             });
             if (hashFilename) {
                 list.push(
-                    `/_assets/media/${hashFilename}`,
                     `/${hashFilename}`,
-                    `/assets/${hashFilename}`,
-                    `/images/${hashFilename}`,
+                    toBaseUrl(`_assets/media/${hashFilename}`),
+                    `/_assets/media/${hashFilename}`,
+                    toBaseUrl(`assets/${hashFilename}`),
+                    toBaseUrl(`images/${hashFilename}`),
                     `https://gardenofvee.africa/_assets/media/${hashFilename}`
                 );
             }
-            return list;
+            return dedupe(list);
         };
 
         const videoPaths = (localName, remoteName) => {
             const list = [
+                toBaseUrl(localName),
                 `/${localName}`,
+                toBaseUrl(`_assets/video/${localName}`),
                 `/_assets/video/${localName}`,
-                `/assets/${localName}`,
-                `/videos/${localName}`,
+                toBaseUrl(`assets/${localName}`),
+                toBaseUrl(`videos/${localName}`),
             ];
             if (remoteName) {
                 list.push(
-                    `/_assets/video/${remoteName}`,
+                    toBaseUrl(remoteName),
                     `/${remoteName}`,
+                    toBaseUrl(`_assets/video/${remoteName}`),
+                    `/_assets/video/${remoteName}`,
                     `https://gardenofvee.africa/_assets/video/${remoteName}`
                 );
             }
-            return list;
+            return dedupe(list);
         };
 
         const ASSETS = {
-            logoMark: namedPaths(['favi', 'ggh', 'logo-icon', 'logo']),
-            logoFull: namedPaths(['ggh', 'logo', 'favi']),
+            logoMark: namedPaths(['favi', 'pot', 'logo-pot', 'logo-mark', 'logo-nav', 'logo-icon', 'logo', 'ggh']),
+            logoFull: namedPaths(['ggh', 'bowls', 'logo-bowls', 'logo-full', 'logo-stacked', 'hero-logo', 'logo', 'favi']),
             gatherVideo: videoPaths('moments.mp4', 'aa986aacdd72866ca7059d622c596d0e.mp4'),
             retreatVideo: videoPaths('retreats.mp4', 'd033274d1f037f745909a3394108e67e.mp4'),
             diningPhoto: namedPaths(['dining', 'gather', 'shared-moments', 'catered'], null),
@@ -261,7 +297,7 @@
             corpNotes: namedPaths(['sticky-notes', 'team', 'corporate'], '7a26e6a4a3266d5bcfe41e41dcd75e2a.png'),
         };
 
-        const SafeImage = ({ sources = [], alt = '', className = '', style = {}, hideOnError = false, fallbackLabel = '' }) => {
+        const SafeImage = ({ sources = [], alt = '', className = '', style = {}, hideOnError = false, fallbackLabel = '', onAspectDetect = null }) => {
             const [idx, setIdx] = useState(0);
             const [failed, setFailed] = useState(false);
 
@@ -285,6 +321,11 @@
                     alt={alt}
                     className={className}
                     style={style}
+                    onLoad={(e) => {
+                        if (onAspectDetect && e.currentTarget.naturalHeight > 0) {
+                            onAspectDetect(e.currentTarget.naturalWidth / e.currentTarget.naturalHeight);
+                        }
+                    }}
                     onError={() => {
                         if (idx + 1 < sources.length) setIdx(idx + 1);
                         else setFailed(true);
@@ -325,13 +366,11 @@
             );
         };
 
-        // ── SMOOTH SCROLL HELPER ─────────────────────────────────────────
         const scrollToElement = (id) => {
             const el = document.getElementById(id);
             if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
         };
 
-        // ── BACKGROUND BLOB ──────────────────────────────────────────────
         const BackgroundBlob = ({ color, size, position, delay = 0, opacity = 0.1 }) => (
             <motion.div
                 initial={{ opacity: 0, scale: 0.8 }}
@@ -342,7 +381,6 @@
             />
         );
 
-        // ── REVEAL SECTION ───────────────────────────────────────────────
         const RevealSection = ({ children, className = '' }) => {
             const ref = useRef(null);
             const inView = useInView(ref, { once: true, amount: 0.05 });
@@ -359,12 +397,8 @@
             );
         };
 
-        // ── STAGGER CONTAINER ────────────────────────────────────────────
         const extractSpanClasses = (cls = '') =>
-            cls
-                .split(/\s+/)
-                .filter((token) => /^(?:(?:sm|md|lg|xl|2xl):)?(?:col|row)-span-/.test(token))
-                .join(' ');
+            cls.split(/\s+/).filter((token) => /^(?:(?:sm|md|lg|xl|2xl):)?(?:col|row)-span-/.test(token)).join(' ');
 
         const StaggerContainer = ({ children, className = '', delay = 0 }) => {
             const ref = useRef(null);
@@ -395,7 +429,6 @@
             );
         };
 
-        // ── GLOW BUTTON ──────────────────────────────────────────────────
         const GlowButton = ({ children, onClick, variant = 'dark', className = '' }) => (
             <motion.button
                 type="button"
@@ -414,7 +447,7 @@
             </motion.button>
         );
 
-        // ── ENQUIRY CONFIG (Standardized 4 Pillars + Email Template) ─────
+        // ── ENQUIRY CONFIG ───────────────────────────────────────────────
         const ENQUIRY_CONFIG = {
             'gather': {
                 label: 'Gather Experience',
@@ -424,29 +457,20 @@
                 dark: true,
                 preselectField: 'event',
                 fields: [
-                    { id: 'name',      label: 'Full Name',                   type: 'text',     required: true },
-                    { id: 'email',     label: 'Email Address',               type: 'email',    required: true },
-                    { id: 'phone',     label: 'Phone Number (Optional)',     type: 'tel',      required: false, placeholder: 'e.g. 078 000 0000' },
-                    { id: 'event',     label: 'Gather Event Type',           type: 'select',   required: true,
+                    { id: 'name',      label: 'Full Name',               type: 'text',     required: true },
+                    { id: 'email',     label: 'Email Address',           type: 'email',    required: true },
+                    { id: 'phone',     label: 'Phone Number (Optional)', type: 'tel',      required: false, placeholder: 'e.g. 078 000 0000' },
+                    { id: 'event',     label: 'Gather Event Type',       type: 'select',   required: true,
                       options: ['Outdoor Cinema', 'Chef-Led Culinary Classes & Tasting Tables', 'Curated Breakfasts, Lunches & Dinners', 'Bonfire Nights', 'Canvas & Pour', 'Upcoming Gather Event', 'Custom / Private Gathering'] },
-                    { id: 'groupSize', label: 'Group Size',                  type: 'select',   required: false,
+                    { id: 'groupSize', label: 'Group Size',              type: 'select',   required: false,
                       options: ['Just me', '2–5 people', '6–10 people', '10+ people'] },
-                    { id: 'dates',     label: 'Preferred Date or Month',     type: 'text',     required: false, placeholder: 'e.g. Any Saturday next month' },
-                    { id: 'message',   label: 'Anything else to share?',     type: 'textarea', required: false },
+                    { id: 'dates',     label: 'Preferred Date or Month', type: 'text',     required: false, placeholder: 'e.g. Any Saturday next month' },
+                    { id: 'message',   label: 'Anything else to share?', type: 'textarea', required: false },
                 ],
                 emailSubject: (f) => `[Garden of Vee] Gather Experience — ${f.event || 'General'} | ${f.name || 'Enquiry'}`,
                 emailBody: (f) =>
-                    `Hello Garden of Vee,\n\n` +
-                    `I would like to enquire about the Gather Experience.\n\n` +
-                    `Pillar:           Gather Experience\n` +
-                    `Event Type:       ${f.event || '—'}\n` +
-                    `Name:             ${f.name || '—'}\n` +
-                    `Email:            ${f.email || '—'}\n` +
-                    `Phone:            ${f.phone || '—'}\n` +
-                    `Group Size:       ${f.groupSize || '—'}\n` +
-                    `Preferred Dates:  ${f.dates || '—'}\n\n` +
-                    `Message:\n${f.message || 'No additional message.'}\n\n` +
-                    `Sent via gardenofvee.africa`,
+                    `Hello Garden of Vee,\n\nI would like to enquire about the Gather Experience.\n\n` +
+                    `Pillar:           Gather Experience\nEvent Type:       ${f.event || '—'}\nName:             ${f.name || '—'}\nEmail:            ${f.email || '—'}\nPhone:            ${f.phone || '—'}\nGroup Size:       ${f.groupSize || '—'}\nPreferred Dates:  ${f.dates || '—'}\n\nMessage:\n${f.message || 'No additional message.'}\n\nSent via gardenofvee.africa`,
             },
             'retreat': {
                 label: 'Retreat Experience',
@@ -456,29 +480,20 @@
                 dark: false,
                 preselectField: 'retreatType',
                 fields: [
-                    { id: 'name',         label: 'Full Name',                           type: 'text',     required: true },
-                    { id: 'email',        label: 'Email Address',                       type: 'email',    required: true },
-                    { id: 'phone',        label: 'Phone Number (Optional)',             type: 'tel',      required: false, placeholder: 'e.g. 078 000 0000' },
-                    { id: 'retreatType',  label: 'Retreat Experience Type',             type: 'select',   required: true,
+                    { id: 'name',         label: 'Full Name',                          type: 'text',     required: true },
+                    { id: 'email',        label: 'Email Address',                      type: 'email',    required: true },
+                    { id: 'phone',        label: 'Phone Number (Optional)',            type: 'tel',      required: false, placeholder: 'e.g. 078 000 0000' },
+                    { id: 'retreatType',  label: 'Retreat Experience Type',            type: 'select',   required: true,
                       options: ['Solo Retreats', 'Couples Retreats', 'The Lusuba Retreat', 'Youth Camps', 'Upcoming Retreat', 'Custom / Private Retreat'] },
-                    { id: 'attendees',    label: 'Number of Attendees',                 type: 'select',   required: false,
+                    { id: 'attendees',    label: 'Number of Attendees',                type: 'select',   required: false,
                       options: ['1 person', '2 people', '3–5 people', '6–10 people', '10+ people'] },
-                    { id: 'dates',        label: 'Preferred Dates',                     type: 'text',     required: false, placeholder: 'e.g. Flexible weekend' },
-                    { id: 'requirements', label: 'Intentions or Special Requirements',  type: 'textarea', required: false },
+                    { id: 'dates',        label: 'Preferred Dates',                    type: 'text',     required: false, placeholder: 'e.g. Flexible weekend' },
+                    { id: 'requirements', label: 'Intentions or Special Requirements', type: 'textarea', required: false },
                 ],
                 emailSubject: (f) => `[Garden of Vee] Retreat Experience — ${f.retreatType || 'General'} | ${f.name || 'Enquiry'}`,
                 emailBody: (f) =>
-                    `Hello Garden of Vee,\n\n` +
-                    `I would like to enquire about a Retreat Experience.\n\n` +
-                    `Pillar:           Retreat Experience\n` +
-                    `Retreat Type:     ${f.retreatType || '—'}\n` +
-                    `Name:             ${f.name || '—'}\n` +
-                    `Email:            ${f.email || '—'}\n` +
-                    `Phone:            ${f.phone || '—'}\n` +
-                    `Attendees:        ${f.attendees || '—'}\n` +
-                    `Preferred Dates:  ${f.dates || '—'}\n\n` +
-                    `Notes / Intentions:\n${f.requirements || 'None specified.'}\n\n` +
-                    `Sent via gardenofvee.africa`,
+                    `Hello Garden of Vee,\n\nI would like to enquire about a Retreat Experience.\n\n` +
+                    `Pillar:           Retreat Experience\nRetreat Type:     ${f.retreatType || '—'}\nName:             ${f.name || '—'}\nEmail:            ${f.email || '—'}\nPhone:            ${f.phone || '—'}\nAttendees:        ${f.attendees || '—'}\nPreferred Dates:  ${f.dates || '—'}\n\nNotes / Intentions:\n${f.requirements || 'None specified.'}\n\nSent via gardenofvee.africa`,
             },
             'faith': {
                 label: 'Faith Experience',
@@ -488,27 +503,19 @@
                 dark: true,
                 preselectField: 'gatheringType',
                 fields: [
-                    { id: 'name',          label: 'Full Name',                                   type: 'text',     required: true },
-                    { id: 'email',         label: 'Email Address',                               type: 'email',    required: true },
-                    { id: 'phone',         label: 'Phone Number (Optional)',                     type: 'tel',      required: false, placeholder: 'e.g. 078 000 0000' },
-                    { id: 'gatheringType', label: 'Faith Gathering Type',                        type: 'select',   required: true,
+                    { id: 'name',          label: 'Full Name',                           type: 'text',     required: true },
+                    { id: 'email',         label: 'Email Address',                       type: 'email',    required: true },
+                    { id: 'phone',         label: 'Phone Number (Optional)',             type: 'tel',      required: false, placeholder: 'e.g. 078 000 0000' },
+                    { id: 'gatheringType', label: 'Faith Gathering Type',                type: 'select',   required: true,
                       options: ['Prayers Experiences', 'Bible Study', 'Bible-Based Retreats', 'Music Events', 'Upcoming Faith Gathering', 'Open to Anything'] },
-                    { id: 'firstTime',     label: 'Have you attended before?',                   type: 'select',   required: false,
+                    { id: 'firstTime',     label: 'Have you attended before?',           type: 'select',   required: false,
                       options: ['No, it is my first time', 'Yes, I have attended before'] },
-                    { id: 'message',       label: 'Anything you would like us to know?',         type: 'textarea', required: false },
+                    { id: 'message',       label: 'Anything you would like us to know?', type: 'textarea', required: false },
                 ],
                 emailSubject: (f) => `[Garden of Vee] Faith Experience — ${f.gatheringType || 'General'} | ${f.name || 'Enquiry'}`,
                 emailBody: (f) =>
-                    `Hello Garden of Vee,\n\n` +
-                    `I would like to join a Faith Experience.\n\n` +
-                    `Pillar:           Faith Experience\n` +
-                    `Session Type:     ${f.gatheringType || '—'}\n` +
-                    `Name:             ${f.name || '—'}\n` +
-                    `Email:            ${f.email || '—'}\n` +
-                    `Phone:            ${f.phone || '—'}\n` +
-                    `First Time?:      ${f.firstTime || '—'}\n\n` +
-                    `Message / Prayer Request:\n${f.message || 'None shared.'}\n\n` +
-                    `Sent via gardenofvee.africa`,
+                    `Hello Garden of Vee,\n\nI would like to join a Faith Experience.\n\n` +
+                    `Pillar:           Faith Experience\nSession Type:     ${f.gatheringType || '—'}\nName:             ${f.name || '—'}\nEmail:            ${f.email || '—'}\nPhone:            ${f.phone || '—'}\nFirst Time?:      ${f.firstTime || '—'}\n\nMessage / Prayer Request:\n${f.message || 'None shared.'}\n\nSent via gardenofvee.africa`,
             },
             'corporate': {
                 label: 'Corporate Experience',
@@ -518,32 +525,22 @@
                 dark: false,
                 preselectField: 'focusArea',
                 fields: [
-                    { id: 'name',         label: 'Your Full Name',                               type: 'text',     required: true },
-                    { id: 'email',        label: 'Work Email Address',                           type: 'email',    required: true },
-                    { id: 'phone',        label: 'Phone Number (Optional)',                      type: 'tel',      required: false, placeholder: 'e.g. 078 000 0000' },
-                    { id: 'organisation', label: 'Organisation Name',                            type: 'text',     required: true },
-                    { id: 'focusArea',    label: 'Corporate Focus Area',                         type: 'select',   required: true,
+                    { id: 'name',         label: 'Your Full Name',          type: 'text',     required: true },
+                    { id: 'email',        label: 'Work Email Address',      type: 'email',    required: true },
+                    { id: 'phone',        label: 'Phone Number (Optional)', type: 'tel',      required: false, placeholder: 'e.g. 078 000 0000' },
+                    { id: 'organisation', label: 'Organisation Name',       type: 'text',     required: true },
+                    { id: 'focusArea',    label: 'Corporate Focus Area',    type: 'select',   required: true,
                       options: ['Team Building', 'Leadership Events', 'Corporate Well-being', 'All of the Above'] },
-                    { id: 'teamSize',     label: 'Team Size',                                    type: 'select',   required: true,
+                    { id: 'teamSize',     label: 'Team Size',               type: 'select',   required: true,
                       options: ['5–10 people', '10–20 people', '20–50 people', '50+ people'] },
-                    { id: 'format',       label: 'Preferred Format',                             type: 'select',   required: false,
+                    { id: 'format',       label: 'Preferred Format',        type: 'select',   required: false,
                       options: ['Half-Day Session', 'Full-Day Experience', 'Multi-Day Retreat', 'Virtual Session', 'Open to Recommendations'] },
-                    { id: 'message',      label: 'Team Goals or Context',                        type: 'textarea', required: false },
+                    { id: 'message',      label: 'Team Goals or Context',   type: 'textarea', required: false },
                 ],
                 emailSubject: (f) => `[Garden of Vee] Corporate Experience — ${f.focusArea || 'General'} | ${f.organisation || f.name || 'Enquiry'}`,
                 emailBody: (f) =>
-                    `Hello Garden of Vee,\n\n` +
-                    `I would like to enquire about a Corporate Experience.\n\n` +
-                    `Pillar:           Corporate Experience\n` +
-                    `Focus Area:       ${f.focusArea || '—'}\n` +
-                    `Name:             ${f.name || '—'}\n` +
-                    `Email:            ${f.email || '—'}\n` +
-                    `Phone:            ${f.phone || '—'}\n` +
-                    `Organisation:     ${f.organisation || '—'}\n` +
-                    `Team Size:        ${f.teamSize || '—'}\n` +
-                    `Preferred Format: ${f.format || '—'}\n\n` +
-                    `Context / Goals:\n${f.message || 'None specified.'}\n\n` +
-                    `Sent via gardenofvee.africa`,
+                    `Hello Garden of Vee,\n\nI would like to enquire about a Corporate Experience.\n\n` +
+                    `Pillar:           Corporate Experience\nFocus Area:       ${f.focusArea || '—'}\nName:             ${f.name || '—'}\nEmail:            ${f.email || '—'}\nPhone:            ${f.phone || '—'}\nOrganisation:     ${f.organisation || '—'}\nTeam Size:        ${f.teamSize || '—'}\nPreferred Format: ${f.format || '—'}\n\nContext / Goals:\n${f.message || 'None specified.'}\n\nSent via gardenofvee.africa`,
             },
             'general': {
                 label: 'Garden of Vee',
@@ -553,22 +550,16 @@
                 dark: true,
                 preselectField: 'pillar',
                 fields: [
-                    { id: 'name',    label: 'Full Name',                  type: 'text',     required: true },
-                    { id: 'email',   label: 'Email Address',              type: 'email',    required: true },
-                    { id: 'phone',   label: 'Phone Number (Optional)',    type: 'tel',      required: false, placeholder: 'e.g. 078 000 0000' },
-                    { id: 'pillar',  label: 'Experience of Interest',     type: 'select',   required: true,
+                    { id: 'name',    label: 'Full Name',               type: 'text',     required: true },
+                    { id: 'email',   label: 'Email Address',           type: 'email',    required: true },
+                    { id: 'phone',   label: 'Phone Number (Optional)', type: 'tel',      required: false, placeholder: 'e.g. 078 000 0000' },
+                    { id: 'pillar',  label: 'Experience of Interest',  type: 'select',   required: true,
                       options: ['Gather Experience', 'Retreat Experience', 'Faith Experience', 'Corporate Experience', 'General Enquiry'] },
-                    { id: 'message', label: 'Your Message',               type: 'textarea', required: true },
+                    { id: 'message', label: 'Your Message',            type: 'textarea', required: true },
                 ],
                 emailSubject: (f) => `[Garden of Vee] ${f.pillar || 'General Enquiry'} | ${f.name || 'Enquiry'}`,
                 emailBody: (f) =>
-                    `Hello Garden of Vee,\n\n` +
-                    `Pillar / Topic:   ${f.pillar || 'General Enquiry'}\n` +
-                    `Name:             ${f.name || '—'}\n` +
-                    `Email:            ${f.email || '—'}\n` +
-                    `Phone:            ${f.phone || '—'}\n\n` +
-                    `Message:\n${f.message || '—'}\n\n` +
-                    `Sent via gardenofvee.africa`,
+                    `Hello Garden of Vee,\n\nPillar / Topic:   ${f.pillar || 'General Enquiry'}\nName:             ${f.name || '—'}\nEmail:            ${f.email || '—'}\nPhone:            ${f.phone || '—'}\n\nMessage:\n${f.message || '—'}\n\nSent via gardenofvee.africa`,
             },
         };
 
@@ -587,9 +578,7 @@
 
             useEffect(() => {
                 const initial = {};
-                if (preselected && cfg.preselectField) {
-                    initial[cfg.preselectField] = preselected;
-                }
+                if (preselected && cfg.preselectField) initial[cfg.preselectField] = preselected;
                 setFormData(initial);
                 setSubmitted(false);
                 setFormError(false);
@@ -613,14 +602,9 @@
             const handleSubmit = async () => {
                 const errs = {};
                 cfg.fields.forEach((f) => {
-                    if (f.required && !String(formData[f.id] || '').trim()) {
-                        errs[f.id] = 'This field is required';
-                    }
+                    if (f.required && !String(formData[f.id] || '').trim()) errs[f.id] = 'This field is required';
                 });
-                if (Object.keys(errs).length) {
-                    setErrors(errs);
-                    return;
-                }
+                if (Object.keys(errs).length) { setErrors(errs); return; }
 
                 setSending(true);
                 setFormError(false);
@@ -699,18 +683,10 @@
                                         The server relay is currently unavailable. Click below to open your pre-filled enquiry directly in your email app.
                                     </p>
                                     <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
-                                        <a
-                                            href={buildMailtoHref()}
-                                            className="px-7 py-3.5 rounded-full text-white text-[11px] uppercase tracking-[0.25em] font-black shadow-lg"
-                                            style={{ background: cfg.accent }}
-                                        >
+                                        <a href={buildMailtoHref()} className="px-7 py-3.5 rounded-full text-white text-[11px] uppercase tracking-[0.25em] font-black shadow-lg" style={{ background: cfg.accent }}>
                                             Open Email App
                                         </a>
-                                        <button
-                                            type="button"
-                                            onClick={() => setFormError(false)}
-                                            className={`text-[11px] uppercase tracking-[0.25em] font-bold px-5 py-3 ${dark ? 'text-white/60 hover:text-white' : 'text-gray-500 hover:text-gray-900'}`}
-                                        >
+                                        <button type="button" onClick={() => setFormError(false)} className={`text-[11px] uppercase tracking-[0.25em] font-bold px-5 py-3 ${dark ? 'text-white/60 hover:text-white' : 'text-gray-500 hover:text-gray-900'}`}>
                                             Retry Form
                                         </button>
                                     </div>
@@ -765,24 +741,16 @@
                                                         placeholder={field.placeholder || ''}
                                                         className={inputBase + ' resize-none'}
                                                         value={formData[field.id] || ''}
-                                                        onChange={(e) => {
-                                                            update(field.id, e.target.value);
-                                                            setErrors((p) => ({ ...p, [field.id]: '' }));
-                                                        }}
+                                                        onChange={(e) => { update(field.id, e.target.value); setErrors((p) => ({ ...p, [field.id]: '' })); }}
                                                     />
                                                 ) : field.type === 'select' ? (
                                                     <select
                                                         className={inputBase + ' cursor-pointer'}
                                                         value={formData[field.id] || ''}
-                                                        onChange={(e) => {
-                                                            update(field.id, e.target.value);
-                                                            setErrors((p) => ({ ...p, [field.id]: '' }));
-                                                        }}
+                                                        onChange={(e) => { update(field.id, e.target.value); setErrors((p) => ({ ...p, [field.id]: '' })); }}
                                                     >
                                                         <option value="" className={optionClass}>Select an option</option>
-                                                        {field.options.map((o) => (
-                                                            <option key={o} value={o} className={optionClass}>{o}</option>
-                                                        ))}
+                                                        {field.options.map((o) => <option key={o} value={o} className={optionClass}>{o}</option>)}
                                                     </select>
                                                 ) : (
                                                     <input
@@ -790,15 +758,10 @@
                                                         placeholder={field.placeholder || ''}
                                                         className={inputBase}
                                                         value={formData[field.id] || ''}
-                                                        onChange={(e) => {
-                                                            update(field.id, e.target.value);
-                                                            setErrors((p) => ({ ...p, [field.id]: '' }));
-                                                        }}
+                                                        onChange={(e) => { update(field.id, e.target.value); setErrors((p) => ({ ...p, [field.id]: '' })); }}
                                                     />
                                                 )}
-                                                {errors[field.id] && (
-                                                    <p className="text-[11px] mt-1.5 font-medium" style={{ color: cfg.accent }}>{errors[field.id]}</p>
-                                                )}
+                                                {errors[field.id] && <p className="text-[11px] mt-1.5 font-medium" style={{ color: cfg.accent }}>{errors[field.id]}</p>}
                                             </div>
                                         ))}
                                     </div>
@@ -816,10 +779,7 @@
                                             {sending ? 'Sending...' : 'Send Enquiry'}
                                         </motion.button>
                                         <div className="text-center pt-1">
-                                            <a
-                                                href={buildMailtoHref()}
-                                                className={`inline-block text-[11px] underline underline-offset-4 transition-opacity hover:opacity-80 ${dark ? 'text-gray-400' : 'text-gray-500'}`}
-                                            >
+                                            <a href={buildMailtoHref()} className={`inline-block text-[11px] underline underline-offset-4 transition-opacity hover:opacity-80 ${dark ? 'text-gray-400' : 'text-gray-500'}`}>
                                                 Or open pre-filled email in your mail app
                                             </a>
                                         </div>
@@ -836,6 +796,7 @@
         const Nav = ({ currentPage, setCurrentPage }) => {
             const [isMenuOpen, setIsMenuOpen] = useState(false);
             const [scrolled, setScrolled] = useState(false);
+            const [hasBakedText, setHasBakedText] = useState(false);
 
             useEffect(() => {
                 const onScroll = () => setScrolled(window.scrollY > 36);
@@ -871,32 +832,58 @@
 
             const isDarkPage = ['gather-experience', 'faith-experience'].includes(currentPage);
             const useLightText = isDarkPage && !scrolled && !isMenuOpen;
+            const headerClass = useLightText
+                ? 'bg-transparent'
+                : 'glass-nav' + (scrolled || isMenuOpen ? ' shadow-sm' : '');
 
             const socialBtnClass =
-                'nav-social-btn w-9 h-9 rounded-full border flex items-center justify-center transition-all duration-300 flex-shrink-0 ' +
+                'nav-social-btn w-8 h-8 xl:w-9 xl:h-9 rounded-full border flex items-center justify-center transition-all duration-300 flex-shrink-0 ' +
                 (useLightText
                     ? 'border-white/20 text-white/85 hover:border-[#D16B3D] hover:bg-[#D16B3D] hover:text-white'
                     : 'border-[#1a1a1a]/15 text-[#1a1a1a]/75 hover:border-[#D16B3D] hover:bg-[#D16B3D] hover:text-white');
 
             return (
-                <header className={'fixed top-0 left-0 right-0 z-50 transition-all duration-300 ' + (scrolled || isMenuOpen ? 'glass shadow-sm' : 'bg-transparent')}>
-                    <div className="max-w-7xl mx-auto px-5 md:px-6 h-20 flex items-center justify-between gap-3">
+                <header className={'fixed top-0 left-0 right-0 z-50 transition-all duration-300 ' + headerClass}>
+                    <div className="max-w-7xl mx-auto px-5 md:px-6 h-[74px] md:h-20 flex items-center justify-between gap-3">
                         <button
                             type="button"
                             onClick={() => go('home')}
                             aria-label="Garden of Vee Home"
-                            className="flex items-center flex-shrink-0 focus:outline-none"
+                            className="flex items-center flex-shrink-0 focus:outline-none text-left"
                         >
-                            <span className={'inline-flex items-center rounded-xl transition-all duration-300 ' + (useLightText ? 'bg-white/95 px-2.5 py-1 shadow-sm' : '')}>
-                                <SafeImage
-                                    sources={ASSETS.logoMark}
-                                    alt="Garden of Vee"
-                                    className="h-11 md:h-12 w-auto object-contain mix-blend-multiply"
-                                />
+                            <span className={'inline-flex items-center gap-2.5 sm:gap-3 rounded-xl transition-all duration-300 ' + (useLightText ? 'bg-white/95 px-2.5 py-1 shadow-sm' : '')}>
+                                {hasBakedText ? (
+                                    <SafeImage
+                                        sources={ASSETS.logoMark}
+                                        alt="Garden of Vee — Curated Experiences"
+                                        className="h-9 sm:h-10 md:h-11 lg:h-9 xl:h-11 w-auto object-contain mix-blend-multiply"
+                                        onAspectDetect={(ratio) => setHasBakedText(ratio > 1.35)}
+                                    />
+                                ) : (
+                                    <>
+                                        <span className="w-8 h-11 sm:w-9 sm:h-12 overflow-hidden flex items-center justify-center flex-shrink-0">
+                                            <SafeImage
+                                                sources={ASSETS.logoMark}
+                                                alt="Garden of Vee"
+                                                className="h-16 sm:h-[70px] w-auto max-w-none object-contain mix-blend-multiply"
+                                                style={{ filter: 'brightness(1.03) contrast(1.06)' }}
+                                                onAspectDetect={(ratio) => setHasBakedText(ratio > 1.35)}
+                                            />
+                                        </span>
+                                        <span className="flex flex-col items-start justify-center leading-none">
+                                            <span className="font-brand text-[13px] sm:text-[15px] lg:text-[14px] xl:text-[16px] tracking-[0.22em] text-[#1a1a1a] uppercase font-normal whitespace-nowrap">
+                                                Garden of Vee
+                                            </span>
+                                            <span className="mt-1.5 text-[7.5px] sm:text-[8.5px] lg:text-[8px] xl:text-[9px] tracking-[0.27em] text-[#1a1a1a]/70 uppercase font-normal whitespace-nowrap">
+                                                Curated Experiences
+                                            </span>
+                                        </span>
+                                    </>
+                                )}
                             </span>
                         </button>
 
-                        <nav className="hidden lg:flex items-center lg:gap-4 xl:gap-6 lg:text-[10.5px] xl:text-[11.5px] uppercase lg:tracking-[0.11em] xl:tracking-[0.16em] font-bold">
+                        <nav className="hidden lg:flex items-center lg:gap-2.5 xl:gap-5 lg:text-[9.5px] xl:text-[11px] uppercase lg:tracking-[0.09em] xl:tracking-[0.15em] font-bold">
                             {links.map((link) => (
                                 <button
                                     key={link.id}
@@ -920,7 +907,7 @@
                                 className={'h-4 w-px mx-0.5 transition-colors duration-300 ' + (useLightText ? 'bg-white/20' : 'bg-[#1a1a1a]/15')}
                             />
 
-                            <div className="flex items-center gap-2">
+                            <div className="flex items-center gap-1.5 xl:gap-2">
                                 <motion.a
                                     href={INSTAGRAM_URL}
                                     target="_blank"
@@ -931,7 +918,7 @@
                                     whileTap={{ scale: 0.94 }}
                                     className={socialBtnClass}
                                 >
-                                    <InstagramIcon className="w-4 h-4" />
+                                    <InstagramIcon className="w-3.5 h-3.5 xl:w-4 xl:h-4" />
                                 </motion.a>
                                 <motion.a
                                     href={FACEBOOK_URL}
@@ -943,14 +930,14 @@
                                     whileTap={{ scale: 0.94 }}
                                     className={socialBtnClass}
                                 >
-                                    <FacebookIcon className="w-4 h-4" />
+                                    <FacebookIcon className="w-3.5 h-3.5 xl:w-4 xl:h-4" />
                                 </motion.a>
                             </div>
 
                             <GlowButton
                                 variant={useLightText ? 'light' : 'dark'}
                                 onClick={goContactFooter}
-                                className="!px-5 xl:!px-6 !py-2.5 !text-[10px] xl:!text-[11px] whitespace-nowrap"
+                                className="lg:!px-4 xl:!px-6 !py-2.5 lg:!text-[9.5px] xl:!text-[11px] whitespace-nowrap"
                             >
                                 Contact Us
                             </GlowButton>
@@ -964,11 +951,11 @@
                             className={'lg:hidden w-11 h-11 rounded-full flex items-center justify-center transition-colors relative z-50 ' + (useLightText ? 'text-white hover:bg-white/10' : 'text-[#1a1a1a] hover:bg-black/5')}
                         >
                             {isMenuOpen ? (
-                                <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                                <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="1.75" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
                                 </svg>
                             ) : (
-                                <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                                <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="1.75" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M4 7h16M4 12h16M4 17h16" />
                                 </svg>
                             )}
@@ -1050,10 +1037,7 @@
                             <div className="text-[10px] sm:text-[10.5px] uppercase tracking-[0.28em] font-normal text-[#D16B3D] mb-1">
                                 PHONE
                             </div>
-                            <a
-                                href="tel:0785147472"
-                                className="inline-flex items-center justify-center text-sm sm:text-[15px] font-light tracking-[0.04em] text-white/85 hover:text-[#D16B3D] transition-colors"
-                            >
+                            <a href="tel:0785147472" className="inline-flex items-center justify-center text-sm sm:text-[15px] font-light tracking-[0.04em] text-white/85 hover:text-[#D16B3D] transition-colors">
                                 {CONTACT_PHONE}
                             </a>
                         </div>
@@ -1062,11 +1046,7 @@
                             <div className="text-[10px] sm:text-[10.5px] uppercase tracking-[0.28em] font-normal text-[#D16B3D] mb-1">
                                 SEND US AN EMAIL
                             </div>
-                            <button
-                                type="button"
-                                onClick={() => openModal('general')}
-                                className="inline-flex items-center justify-center text-sm sm:text-[15px] font-light tracking-[0.02em] text-white/85 hover:text-[#D16B3D] transition-colors break-words"
-                            >
+                            <button type="button" onClick={() => openModal('general')} className="inline-flex items-center justify-center text-sm sm:text-[15px] font-light tracking-[0.02em] text-white/85 hover:text-[#D16B3D] transition-colors break-words">
                                 {CONTACT_EMAIL}
                             </button>
                         </div>
@@ -1091,8 +1071,10 @@
             </footer>
         );
 
-        // ── HOME PAGE (Warm Ivory Hero -> Dark Welcome -> Cream Pillars -> Dark Social -> Dark Footer) ──
+        // ── HOME PAGE ────────────────────────────────────────────────────
         const HomePage = ({ setCurrentPage }) => {
+            const [heroBakedText, setHeroBakedText] = useState(false);
+
             const onCardMove = (e) => {
                 const r = e.currentTarget.getBoundingClientRect();
                 e.currentTarget.style.setProperty('--card-x', (((e.clientX - r.left) / r.width) * 100) + '%');
@@ -1132,7 +1114,7 @@
                 <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
                     {/* 1. MINIMALIST WARM IVORY HERO */}
                     <section
-                        className="relative pt-28 pb-16 hero-full w-full text-[#1a1a1a] flex items-center justify-center overflow-hidden"
+                        className="relative pt-24 pb-12 md:pt-28 md:pb-16 hero-full w-full text-[#1a1a1a] flex items-center justify-center overflow-hidden"
                         style={{
                             background: 'radial-gradient(circle at 50% 44%, rgba(209, 107, 61, 0.08), transparent 58%), #faf7f2'
                         }}
@@ -1142,13 +1124,13 @@
                                 initial={{ opacity: 0, y: 12 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.65 }}
-                                className="text-[#1a1a1a]/60 font-medium tracking-[0.34em] sm:tracking-[0.38em] mb-8 uppercase flex flex-wrap items-center justify-center gap-x-3 gap-y-1"
+                                className="text-[#1a1a1a]/60 font-medium tracking-[0.3em] sm:tracking-[0.38em] mb-7 sm:mb-9 uppercase flex flex-wrap items-center justify-center gap-x-2.5 sm:gap-x-3 gap-y-1"
                                 style={{ fontSize: 'clamp(0.68rem, 1.8vw, 0.85rem)' }}
                             >
                                 <span>Breathe</span>
-                                <span className="text-[#D16B3D] font-semibold">·</span>
+                                <span className="text-[#1a1a1a]/45 font-semibold">·</span>
                                 <span>Belong</span>
-                                <span className="text-[#D16B3D] font-semibold">·</span>
+                                <span className="text-[#1a1a1a]/45 font-semibold">·</span>
                                 <span>Become</span>
                             </motion.p>
 
@@ -1156,33 +1138,60 @@
                                 initial={{ opacity: 0, scale: 0.94, y: 16 }}
                                 animate={{ opacity: 1, scale: 1, y: 0 }}
                                 transition={{ duration: 0.85, delay: 0.12, ease: [0.22, 1, 0.36, 1] }}
-                                className="mb-10"
+                                className="mb-10 sm:mb-12 flex flex-col items-center"
                             >
-                                <SafeImage
-                                    sources={ASSETS.logoFull}
-                                    alt="Garden of Vee"
-                                    className="mx-auto object-contain mix-blend-multiply"
-                                    style={{ width: 'clamp(230px, 52vw, 420px)', height: 'auto' }}
-                                />
+                                {heroBakedText ? (
+                                    <SafeImage
+                                        sources={ASSETS.logoFull}
+                                        alt="Garden of Vee"
+                                        className="mx-auto object-contain mix-blend-multiply"
+                                        style={{ width: 'clamp(285px, 76vw, 450px)', height: 'auto' }}
+                                        onAspectDetect={(ratio) => setHeroBakedText(ratio > 1.35)}
+                                    />
+                                ) : (
+                                    <>
+                                        <div className="-mt-2 sm:-mt-3 mb-0 sm:mb-1">
+                                            <SafeImage
+                                                sources={ASSETS.logoFull}
+                                                alt="Garden of Vee"
+                                                className="h-32 sm:h-36 md:h-40 w-auto mx-auto object-contain mix-blend-multiply"
+                                                style={{ filter: 'brightness(1.02) contrast(1.04)' }}
+                                                onAspectDetect={(ratio) => setHeroBakedText(ratio > 1.35)}
+                                            />
+                                        </div>
+                                        <h1
+                                            className="font-brand font-normal uppercase text-[#1a1a1a] tracking-[0.26em] sm:tracking-[0.3em] leading-none text-center whitespace-nowrap"
+                                            style={{ fontSize: 'clamp(1.65rem, 6.4vw, 2.85rem)' }}
+                                        >
+                                            GARDEN OF VEE
+                                        </h1>
+                                        <p
+                                            className="mt-3.5 sm:mt-4 font-light text-[#1a1a1a]/55 tracking-[0.24em] sm:tracking-[0.3em] text-center"
+                                            style={{ fontSize: 'clamp(0.75rem, 2.4vw, 0.95rem)' }}
+                                        >
+                                            Curated Experiences
+                                        </p>
+                                    </>
+                                )}
                             </motion.div>
 
                             <motion.div
                                 initial={{ opacity: 0, y: 14 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ delay: 0.28, duration: 0.7 }}
-                                className="flex flex-col items-center gap-3.5 w-full max-w-[300px]"
+                                className="flex flex-col items-center gap-3.5 w-full max-w-[260px] sm:max-w-[280px]"
                             >
                                 <button
                                     type="button"
                                     onClick={() => scrollToElement('follow-the-journey')}
-                                    className="w-full px-8 py-4 rounded-full bg-[#1a1a1a] text-white text-[10.5px] sm:text-[11px] uppercase tracking-[0.24em] font-bold hover:bg-[#D16B3D] transition-colors duration-300 shadow-lg whitespace-nowrap"
+                                    className="w-full px-7 py-4 rounded-full bg-[#1a1a1a] text-white text-[10.5px] sm:text-[11px] uppercase tracking-[0.22em] font-bold hover:bg-[#D16B3D] transition-colors duration-300 shadow-lg whitespace-nowrap"
                                 >
                                     Join the Experience
                                 </button>
                                 <button
                                     type="button"
                                     onClick={() => scrollToElement('experiences')}
-                                    className="w-full px-8 py-4 rounded-full border border-[#1a1a1a]/30 bg-white/70 text-[#1a1a1a] text-[10.5px] sm:text-[11px] uppercase tracking-[0.24em] font-bold hover:border-[#D16B3D] hover:text-[#D16B3D] transition-colors duration-300 whitespace-nowrap"
+                                    className="w-full px-7 py-4 rounded-full border border-[#1a1a1a]/30 bg-white/65 text-[#1a1a1a] text-[10.5px] sm:text-[11px] uppercase tracking-[0.22em] font-bold hover:border-[#D16B3D] hover:text-[#D16B3D] transition-colors duration-300 whitespace-nowrap"
                                 >
                                     Explore the Experience
                                 </button>
@@ -1282,7 +1291,7 @@
                         </StaggerContainer>
                     </section>
 
-                    {/* 4. DARK SECTION: FOLLOW THE JOURNEY (COMPACT & MATCHED TO FOOTER #1a1a1a) */}
+                    {/* 4. DARK SECTION: FOLLOW THE JOURNEY */}
                     <section id="follow-the-journey" className="relative py-12 md:py-16 bg-[#1a1a1a] text-white overflow-hidden">
                         <BackgroundBlob color="#D16B3D" size="320px" position={{ top: '-110px', left: '-100px' }} opacity={0.075} />
                         <BackgroundBlob color="#717254" size="320px" position={{ bottom: '-120px', right: '-100px' }} opacity={0.08} delay={0.3} />
@@ -1304,7 +1313,6 @@
                             </RevealSection>
 
                             <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5 max-w-3xl mx-auto">
-                                {/* INSTAGRAM CARD */}
                                 <motion.a
                                     href={INSTAGRAM_URL}
                                     target="_blank"
@@ -1342,7 +1350,6 @@
                                     </div>
                                 </motion.a>
 
-                                {/* FACEBOOK CARD */}
                                 <motion.a
                                     href={FACEBOOK_URL}
                                     target="_blank"
@@ -1386,7 +1393,7 @@
             );
         };
 
-        // ── SHARED INDIVIDUAL EXPERIENCE PAGE TEMPLATE ───────────────────
+        // ── SHARED EXPERIENCE PAGE TEMPLATE ──────────────────────────────
         const ExperiencePageTemplate = ({
             theme = 'dark',
             eyebrow = 'Breathe. Belong. Become.',
@@ -1418,56 +1425,35 @@
                         isDark ? 'bg-[#161514] text-white' : 'bg-[#faf8f5] text-[#1a1a1a]'
                     }`}
                 >
-                    <BackgroundBlob
-                        color="#D16B3D"
-                        size="420px"
-                        position={{ top: '-140px', right: '-140px' }}
-                        opacity={isDark ? 0.055 : 0.045}
-                    />
-                    <BackgroundBlob
-                        color="#717254"
-                        size="360px"
-                        position={{ bottom: '-120px', left: '-120px' }}
-                        opacity={isDark ? 0.05 : 0.04}
-                        delay={0.3}
-                    />
+                    <BackgroundBlob color="#D16B3D" size="420px" position={{ top: '-140px', right: '-140px' }} opacity={isDark ? 0.055 : 0.045} />
+                    <BackgroundBlob color="#717254" size="360px" position={{ bottom: '-120px', left: '-120px' }} opacity={isDark ? 0.05 : 0.04} delay={0.3} />
 
                     <div className="max-w-3xl mx-auto section-px relative z-10">
-                        {/* Header & Eyebrow */}
                         <motion.div
                             initial={{ opacity: 0, y: 16 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
                             className="text-center"
                         >
-                            <span
-                                className={`block text-[10px] sm:text-[10.5px] uppercase tracking-[0.36em] font-semibold mb-3.5 ${
-                                    isDark ? 'text-[#b57a5d]' : 'text-[#a66e53]'
-                                }`}
-                            >
+                            <span className={`block text-[10px] sm:text-[10.5px] uppercase tracking-[0.36em] font-semibold mb-3.5 ${isDark ? 'text-[#b57a5d]' : 'text-[#a66e53]'}`}>
                                 {eyebrow}
                             </span>
                             <h1
-                                className={`font-display font-normal tracking-tight mb-8 sm:mb-10 ${
-                                    isDark ? 'text-white' : 'text-[#1a1a1a]'
-                                }`}
+                                className={`font-display font-normal tracking-tight mb-8 sm:mb-10 ${isDark ? 'text-white' : 'text-[#1a1a1a]'}`}
                                 style={{ fontSize: 'clamp(2.35rem, 5.5vw, 3.75rem)', lineHeight: 1.08 }}
                             >
                                 {title}
                             </h1>
                         </motion.div>
 
-                        {/* Editorial Dark Hero Banner Card */}
                         <motion.div
                             initial={{ opacity: 0, y: 18 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.55, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
                             className="mb-8 sm:mb-10 rounded-[1.4rem] sm:rounded-[1.75rem] px-6 py-14 sm:py-20 text-center relative overflow-hidden border border-white/10"
                             style={{
-                                background:
-                                    'radial-gradient(circle at 75% 22%, rgba(209, 107, 61, 0.16), transparent 58%), radial-gradient(circle at 18% 85%, rgba(201, 151, 91, 0.08), transparent 55%), linear-gradient(155deg, #252220 0%, #171615 100%)',
-                                boxShadow:
-                                    'inset 0 1px 0 rgba(255, 255, 255, 0.06), 0 24px 48px -18px rgba(0, 0, 0, 0.35)',
+                                background: 'radial-gradient(circle at 75% 22%, rgba(209, 107, 61, 0.16), transparent 58%), radial-gradient(circle at 18% 85%, rgba(201, 151, 91, 0.08), transparent 55%), linear-gradient(155deg, #252220 0%, #171615 100%)',
+                                boxShadow: 'inset 0 1px 0 rgba(255, 255, 255, 0.06), 0 24px 48px -18px rgba(0, 0, 0, 0.35)',
                             }}
                         >
                             <div className="relative z-10">
@@ -1480,36 +1466,21 @@
                             </div>
                         </motion.div>
 
-                        {/* Intro Copy & Top CTA */}
                         <motion.div
                             initial={{ opacity: 0, y: 14 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.5, delay: 0.14, ease: [0.22, 1, 0.36, 1] }}
                             className="text-center max-w-2xl mx-auto mb-10"
                         >
-                            <p
-                                className={`text-[14px] sm:text-[15px] font-light leading-relaxed mb-6 ${
-                                    isDark ? 'text-white/70' : 'text-[#55504a]'
-                                }`}
-                            >
+                            <p className={`text-[14px] sm:text-[15px] font-light leading-relaxed mb-6 ${isDark ? 'text-white/70' : 'text-[#55504a]'}`}>
                                 {intro}
                             </p>
-                            <button
-                                type="button"
-                                onClick={onCtaClick}
-                                className="inline-flex items-center gap-2 text-[10.5px] sm:text-[11px] uppercase tracking-[0.24em] font-bold text-[#D16B3D] hover:text-[#e88a5e] transition-colors group"
-                            >
+                            <button type="button" onClick={onCtaClick} className="inline-flex items-center gap-2 text-[10.5px] sm:text-[11px] uppercase tracking-[0.24em] font-bold text-[#D16B3D] hover:text-[#e88a5e] transition-colors group">
                                 <span>{ctaLabel}</span>
-                                <span
-                                    aria-hidden="true"
-                                    className="transition-transform duration-300 group-hover:translate-x-1"
-                                >
-                                    →
-                                </span>
+                                <span aria-hidden="true" className="transition-transform duration-300 group-hover:translate-x-1">→</span>
                             </button>
                         </motion.div>
 
-                        {/* Filter Pill Tabs */}
                         <div className="flex flex-wrap items-center justify-center gap-2.5 sm:gap-3 mb-12">
                             {filters.map((filter) => {
                                 const isActive = activeFilter === filter.id;
@@ -1534,7 +1505,6 @@
                             })}
                         </div>
 
-                        {/* Categorized Cards List */}
                         <AnimatePresence mode="wait">
                             <motion.div
                                 key={activeFilter}
@@ -1546,19 +1516,11 @@
                             >
                                 {visibleCategories.map((cat) => (
                                     <div key={cat.id}>
-                                        <div
-                                            className={`flex items-baseline justify-between gap-4 pb-2.5 mb-4 border-b ${
-                                                isDark ? 'border-white/10' : 'border-[#1a1a1a]/10'
-                                            }`}
-                                        >
+                                        <div className={`flex items-baseline justify-between gap-4 pb-2.5 mb-4 border-b ${isDark ? 'border-white/10' : 'border-[#1a1a1a]/10'}`}>
                                             <h2 className="text-[10.5px] sm:text-[11px] uppercase tracking-[0.22em] font-bold text-[#D16B3D]">
                                                 {cat.label}
                                             </h2>
-                                            <span
-                                                className={`text-[11px] font-light ${
-                                                    isDark ? 'text-white/45' : 'text-[#1a1a1a]/45'
-                                                }`}
-                                            >
+                                            <span className={`text-[11px] font-light ${isDark ? 'text-white/45' : 'text-[#1a1a1a]/45'}`}>
                                                 {cat.countLabel}
                                             </span>
                                         </div>
@@ -1576,30 +1538,15 @@
                                                             : 'bg-white border border-[#1a1a1a]/10 hover:border-[#D16B3D]/55 shadow-sm hover:shadow-md')
                                                     }
                                                 >
-                                                    <h3
-                                                        className={`font-display font-medium text-xl sm:text-[1.45rem] leading-snug mb-2 transition-colors ${
-                                                            isDark
-                                                                ? 'text-white group-hover:text-[#D16B3D]'
-                                                                : 'text-[#1a1a1a] group-hover:text-[#D16B3D]'
-                                                        }`}
-                                                    >
+                                                    <h3 className={`font-display font-medium text-xl sm:text-[1.45rem] leading-snug mb-2 transition-colors ${isDark ? 'text-white group-hover:text-[#D16B3D]' : 'text-[#1a1a1a] group-hover:text-[#D16B3D]'}`}>
                                                         {item.title}
                                                     </h3>
-                                                    <p
-                                                        className={`text-sm sm:text-[15px] font-light leading-relaxed mb-5 ${
-                                                            isDark ? 'text-white/65' : 'text-[#1a1a1a]/65'
-                                                        }`}
-                                                    >
+                                                    <p className={`text-sm sm:text-[15px] font-light leading-relaxed mb-5 ${isDark ? 'text-white/65' : 'text-[#1a1a1a]/65'}`}>
                                                         {item.desc}
                                                     </p>
                                                     <span className="inline-flex items-center gap-2 text-[10.5px] sm:text-[11px] uppercase tracking-[0.22em] font-bold text-[#D16B3D]">
                                                         <span>Enquire</span>
-                                                        <span
-                                                            aria-hidden="true"
-                                                            className="transition-transform duration-300 group-hover:translate-x-1"
-                                                        >
-                                                            →
-                                                        </span>
+                                                        <span aria-hidden="true" className="transition-transform duration-300 group-hover:translate-x-1">→</span>
                                                     </span>
                                                 </button>
                                             ))}
@@ -1609,17 +1556,13 @@
                             </motion.div>
                         </AnimatePresence>
 
-                        {/* Optional Faith Statement Quote Card */}
                         {quoteCard && (
                             <motion.div
                                 initial={{ opacity: 0, y: 14 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.45, delay: 0.15 }}
                                 className="mt-12 rounded-[1.75rem] px-6 py-10 sm:px-12 sm:py-12 text-center border border-white/[0.12] relative overflow-hidden"
-                                style={{
-                                    background:
-                                        'radial-gradient(ellipse 68% 72% at 50% 26%, rgba(209, 107, 61, 0.16) 0%, rgba(209, 107, 61, 0.05) 55%, transparent 100%), rgba(255, 255, 255, 0.03)',
-                                }}
+                                style={{ background: 'radial-gradient(ellipse 68% 72% at 50% 26%, rgba(209, 107, 61, 0.16) 0%, rgba(209, 107, 61, 0.05) 55%, transparent 100%), rgba(255, 255, 255, 0.03)' }}
                             >
                                 <div className="relative z-10">
                                     <div className="text-[10px] sm:text-[10.5px] uppercase tracking-[0.34em] font-semibold text-[#D16B3D] mb-5">
@@ -1644,7 +1587,7 @@
             );
         };
 
-        // ── 1. GATHER EXPERIENCE PAGE (Dark #161514) ─────────────────────
+        // ── 1. GATHER EXPERIENCE PAGE ────────────────────────────────────
         const GatherExperiencePage = ({ openModal }) => {
             const filters = [
                 { id: 'all', label: 'All Gatherings (5)' },
@@ -1653,59 +1596,25 @@
                 { id: 'bonfire-nights', label: 'Bonfire Nights' },
                 { id: 'sip-paint', label: 'Sip & Paint' },
             ];
-
             const categories = [
                 {
-                    id: 'cinema',
-                    filterId: 'cinema',
-                    label: 'Cinema',
-                    countLabel: '1 format',
+                    id: 'cinema', filterId: 'cinema', label: 'Cinema', countLabel: '1 format',
+                    items: [{ title: 'Outdoor Cinema', desc: 'Open-air film screenings under the sky followed by conversation over shared snacks.' }],
+                },
+                {
+                    id: 'food-dining', filterId: 'food-dining', label: 'Food & Dining', countLabel: '2 formats',
                     items: [
-                        {
-                            title: 'Outdoor Cinema',
-                            desc: 'Open-air film screenings under the sky followed by conversation over shared snacks.',
-                        },
+                        { title: 'Chef-Led Culinary Classes & Tasting Tables', desc: 'Guided cooking classes and culinary sessions led by professional chefs, paired with dining experiences.' },
+                        { title: 'Curated Breakfasts, Lunches & Dinners', desc: 'Shared tables and seasonal food gatherings across breakfast, lunch, and dinner crafted for warmth, flavour, and connection.' },
                     ],
                 },
                 {
-                    id: 'food-dining',
-                    filterId: 'food-dining',
-                    label: 'Food & Dining',
-                    countLabel: '2 formats',
-                    items: [
-                        {
-                            title: 'Chef-Led Culinary Classes & Tasting Tables',
-                            desc: 'Guided cooking classes and culinary sessions led by professional chefs, paired with dining experiences.',
-                        },
-                        {
-                            title: 'Curated Breakfasts, Lunches & Dinners',
-                            desc: 'Shared tables and seasonal food gatherings across breakfast, lunch, and dinner crafted for warmth, flavour, and connection.',
-                        },
-                    ],
+                    id: 'bonfire-nights', filterId: 'bonfire-nights', label: 'Bonfire Nights', countLabel: '1 format',
+                    items: [{ title: 'Bonfire Nights', desc: 'Evenings gathered around an outdoor fire for fireside conversation, music, and connection.' }],
                 },
                 {
-                    id: 'bonfire-nights',
-                    filterId: 'bonfire-nights',
-                    label: 'Bonfire Nights',
-                    countLabel: '1 format',
-                    items: [
-                        {
-                            title: 'Bonfire Nights',
-                            desc: 'Evenings gathered around an outdoor fire for fireside conversation, music, and connection.',
-                        },
-                    ],
-                },
-                {
-                    id: 'sip-paint',
-                    filterId: 'sip-paint',
-                    label: 'Sip & Paint',
-                    countLabel: '1 format',
-                    items: [
-                        {
-                            title: 'Canvas & Pour',
-                            desc: 'Guided painting with your favourite drink in hand, with no prior art experience needed.',
-                        },
-                    ],
+                    id: 'sip-paint', filterId: 'sip-paint', label: 'Sip & Paint', countLabel: '1 format',
+                    items: [{ title: 'Canvas & Pour', desc: 'Guided painting with your favourite drink in hand, with no prior art experience needed.' }],
                 },
             ];
 
@@ -1730,7 +1639,7 @@
             );
         };
 
-        // ── 2. RETREAT EXPERIENCE PAGE (Light #faf8f5) ───────────────────
+        // ── 2. RETREAT EXPERIENCE PAGE ───────────────────────────────────
         const RetreatExperiencePage = ({ openModal }) => {
             const filters = [
                 { id: 'all', label: 'All Retreats (4)' },
@@ -1739,55 +1648,22 @@
                 { id: 'healing', label: 'Healing' },
                 { id: 'youth-camps', label: 'Youth Camps' },
             ];
-
             const categories = [
                 {
-                    id: 'solo-retreats',
-                    filterId: 'solo-retreats',
-                    label: 'Solo Retreats',
-                    countLabel: '1 retreat',
-                    items: [
-                        {
-                            title: 'Solo Retreats',
-                            desc: 'Step away with other solo travelers in a safe, welcoming environment—giving you dedicated time to yourself, space to exhale, and a restorative self-care release.',
-                        },
-                    ],
+                    id: 'solo-retreats', filterId: 'solo-retreats', label: 'Solo Retreats', countLabel: '1 retreat',
+                    items: [{ title: 'Solo Retreats', desc: 'Step away with other solo travelers in a safe, welcoming environment—giving you dedicated time to yourself, space to exhale, and a restorative self-care release.' }],
                 },
                 {
-                    id: 'couples-retreats',
-                    filterId: 'couples-retreats',
-                    label: 'Couples Retreats',
-                    countLabel: '1 retreat',
-                    items: [
-                        {
-                            title: 'Couples Retreats',
-                            desc: 'Intentional time together to rebuild closeness, strengthen communication, and create lasting memories.',
-                        },
-                    ],
+                    id: 'couples-retreats', filterId: 'couples-retreats', label: 'Couples Retreats', countLabel: '1 retreat',
+                    items: [{ title: 'Couples Retreats', desc: 'Intentional time together to rebuild closeness, strengthen communication, and create lasting memories.' }],
                 },
                 {
-                    id: 'healing',
-                    filterId: 'healing',
-                    label: 'Healing',
-                    countLabel: '1 retreat',
-                    items: [
-                        {
-                            title: 'The Lusuba Retreat',
-                            desc: 'A guided healing retreat exploring different subject matters through meaningful dialogue, care, and renewal.',
-                        },
-                    ],
+                    id: 'healing', filterId: 'healing', label: 'Healing', countLabel: '1 retreat',
+                    items: [{ title: 'The Lusuba Retreat', desc: 'A guided healing retreat exploring different subject matters through meaningful dialogue, care, and renewal.' }],
                 },
                 {
-                    id: 'youth-camps',
-                    filterId: 'youth-camps',
-                    label: 'Youth Camps',
-                    countLabel: '1 retreat',
-                    items: [
-                        {
-                            title: 'Youth Camps',
-                            desc: 'Transformative experiences for young people combining outdoor adventure, faith, and community to build confidence and lasting friendships.',
-                        },
-                    ],
+                    id: 'youth-camps', filterId: 'youth-camps', label: 'Youth Camps', countLabel: '1 retreat',
+                    items: [{ title: 'Youth Camps', desc: 'Transformative experiences for young people combining outdoor adventure, faith, and community to build confidence and lasting friendships.' }],
                 },
             ];
 
@@ -1812,7 +1688,7 @@
             );
         };
 
-        // ── 3. FAITH EXPERIENCE PAGE (Dark #161514) ──────────────────────
+        // ── 3. FAITH EXPERIENCE PAGE ─────────────────────────────────────
         const FaithExperiencePage = ({ openModal }) => {
             const filters = [
                 { id: 'all', label: 'All Faith Gatherings' },
@@ -1821,55 +1697,22 @@
                 { id: 'bible-based-retreats', label: 'Bible-Based Retreats' },
                 { id: 'music-events', label: 'Music Events' },
             ];
-
             const categories = [
                 {
-                    id: 'prayers-experiences',
-                    filterId: 'prayers-experiences',
-                    label: 'Prayers Experiences',
-                    countLabel: '1 experience',
-                    items: [
-                        {
-                            title: 'Prayers Experiences',
-                            desc: 'Guided times of corporate and personal prayer rooted in scripture, stillness, and expectancy.',
-                        },
-                    ],
+                    id: 'prayers-experiences', filterId: 'prayers-experiences', label: 'Prayers Experiences', countLabel: '1 experience',
+                    items: [{ title: 'Prayers Experiences', desc: 'Guided times of corporate and personal prayer rooted in scripture, stillness, and expectancy.' }],
                 },
                 {
-                    id: 'bible-study',
-                    filterId: 'bible-study',
-                    label: 'Bible Study',
-                    countLabel: '1 experience',
-                    items: [
-                        {
-                            title: 'Bible Study',
-                            desc: 'Focused sessions exploring scripture in full context, guided with care and depth.',
-                        },
-                    ],
+                    id: 'bible-study', filterId: 'bible-study', label: 'Bible Study', countLabel: '1 experience',
+                    items: [{ title: 'Bible Study', desc: 'Focused sessions exploring scripture in full context, guided with care and depth.' }],
                 },
                 {
-                    id: 'bible-based-retreats',
-                    filterId: 'bible-based-retreats',
-                    label: 'Bible-Based Retreats',
-                    countLabel: '1 experience',
-                    items: [
-                        {
-                            title: 'Bible-Based Retreats',
-                            desc: 'Intentional retreats grounded in scripture, quiet reflection, and spiritual renewal.',
-                        },
-                    ],
+                    id: 'bible-based-retreats', filterId: 'bible-based-retreats', label: 'Bible-Based Retreats', countLabel: '1 experience',
+                    items: [{ title: 'Bible-Based Retreats', desc: 'Intentional retreats grounded in scripture, quiet reflection, and spiritual renewal.' }],
                 },
                 {
-                    id: 'music-events',
-                    filterId: 'music-events',
-                    label: 'Music Events',
-                    countLabel: '1 experience',
-                    items: [
-                        {
-                            title: 'Music Events',
-                            desc: 'Acoustic worship and faith-inspired music nights welcoming believers and seekers alike.',
-                        },
-                    ],
+                    id: 'music-events', filterId: 'music-events', label: 'Music Events', countLabel: '1 experience',
+                    items: [{ title: 'Music Events', desc: 'Acoustic worship and faith-inspired music nights welcoming believers and seekers alike.' }],
                 },
             ];
 
@@ -1900,7 +1743,7 @@
             );
         };
 
-        // ── 4. CORPORATE EXPERIENCE PAGE (Light #faf8f5) ─────────────────
+        // ── 4. CORPORATE EXPERIENCE PAGE ─────────────────────────────────
         const CorporateExperiencePage = ({ openModal }) => {
             const filters = [
                 { id: 'all', label: 'All Focus Areas (3)' },
@@ -1908,43 +1751,18 @@
                 { id: 'leadership', label: 'Leadership' },
                 { id: 'well-being', label: 'Well-being' },
             ];
-
             const categories = [
                 {
-                    id: 'team-building',
-                    filterId: 'team-building',
-                    label: 'Team Building',
-                    countLabel: '1 focus area',
-                    items: [
-                        {
-                            title: 'Team Building',
-                            desc: 'Interactive sessions that bring team vision, values, and goals into clear shared focus so everyone moves forward together.',
-                        },
-                    ],
+                    id: 'team-building', filterId: 'team-building', label: 'Team Building', countLabel: '1 focus area',
+                    items: [{ title: 'Team Building', desc: 'Interactive sessions that bring team vision, values, and goals into clear shared focus so everyone moves forward together.' }],
                 },
                 {
-                    id: 'leadership',
-                    filterId: 'leadership',
-                    label: 'Leadership',
-                    countLabel: '1 focus area',
-                    items: [
-                        {
-                            title: 'Leadership Events',
-                            desc: 'Facilitated workshops developing emotional intelligence, clear communication, and people-first leadership.',
-                        },
-                    ],
+                    id: 'leadership', filterId: 'leadership', label: 'Leadership', countLabel: '1 focus area',
+                    items: [{ title: 'Leadership Events', desc: 'Facilitated workshops developing emotional intelligence, clear communication, and people-first leadership.' }],
                 },
                 {
-                    id: 'well-being',
-                    filterId: 'well-being',
-                    label: 'Well-being',
-                    countLabel: '1 focus area',
-                    items: [
-                        {
-                            title: 'Corporate Well-being',
-                            desc: 'Workplace wellness sessions designed to address burnout, restore energy, and help teams genuinely thrive.',
-                        },
-                    ],
+                    id: 'well-being', filterId: 'well-being', label: 'Well-being', countLabel: '1 focus area',
+                    items: [{ title: 'Corporate Well-being', desc: 'Workplace wellness sessions designed to address burnout, restore energy, and help teams genuinely thrive.' }],
                 },
             ];
 
@@ -1967,7 +1785,12 @@
         // ── APP ──────────────────────────────────────────────────────────
         const App = () => {
             const normalizePage = (raw) => {
-                const p = (raw || '').replace(/^\/+|\/+$/g, '').toLowerCase();
+                let p = (raw || '').trim();
+                if (BASE_PATH && p.toLowerCase().startsWith(BASE_PATH.toLowerCase())) {
+                    p = p.slice(BASE_PATH.length);
+                }
+                p = p.replace(/^[#/]+|[#/]+$/g, '').toLowerCase();
+                if (p === 'index.html') p = '';
                 switch (p) {
                     case '':
                     case 'home':
@@ -1992,7 +1815,14 @@
                 }
             };
 
-            const [currentPage, setPageState] = useState(() => normalizePage(window.location.pathname));
+            const getInitialPage = () => {
+                if (IS_FILE_PROTOCOL && window.location.hash) {
+                    return normalizePage(window.location.hash);
+                }
+                return normalizePage(window.location.pathname || window.location.hash);
+            };
+
+            const [currentPage, setPageState] = useState(getInitialPage);
             const [modalState, setModalState] = useState(null);
 
             const openModal = (type, preselected = null) => setModalState({ type, preselected });
@@ -2001,17 +1831,31 @@
             const setCurrentPage = (id) => {
                 const normalized = normalizePage(id);
                 setPageState(normalized);
-                const path = normalized === 'home' ? '/' : '/' + normalized;
-                if (window.location.pathname !== path) {
-                    window.history.pushState({ page: normalized }, '', path);
-                }
+                try {
+                    if (IS_FILE_PROTOCOL) {
+                        const nextHash = normalized === 'home' ? '' : '#' + normalized;
+                        if (window.location.hash !== nextHash) {
+                            window.history.pushState({ page: normalized }, '', nextHash || window.location.pathname);
+                        }
+                    } else {
+                        const prefix = BASE_PATH || '';
+                        const path = normalized === 'home' ? (prefix ? prefix + '/' : '/') : `${prefix}/${normalized}`;
+                        if (window.location.pathname !== path) {
+                            window.history.pushState({ page: normalized }, '', path);
+                        }
+                    }
+                } catch (e) {}
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             };
 
             useEffect(() => {
-                const onPopState = () => setPageState(normalizePage(window.location.pathname));
-                window.addEventListener('popstate', onPopState);
-                return () => window.removeEventListener('popstate', onPopState);
+                const onLocationChange = () => setPageState(getInitialPage());
+                window.addEventListener('popstate', onLocationChange);
+                window.addEventListener('hashchange', onLocationChange);
+                return () => {
+                    window.removeEventListener('popstate', onLocationChange);
+                    window.removeEventListener('hashchange', onLocationChange);
+                };
             }, []);
 
             const renderPage = () => {
