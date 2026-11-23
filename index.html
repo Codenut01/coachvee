@@ -428,7 +428,7 @@
                     { id: 'email',     label: 'Email Address',               type: 'email',    required: true },
                     { id: 'phone',     label: 'Phone Number (Optional)',     type: 'tel',      required: false, placeholder: 'e.g. 078 000 0000' },
                     { id: 'event',     label: 'Gather Event Type',           type: 'select',   required: true,
-                      options: ['Sip & Paint', 'Poetry Events', 'Slow Craft Events', 'Outdoor Movie Nights', 'Listening Sessions', 'Neo-Soul Events', 'Live Music Events', 'Dining Events', 'Bonfire Evenings', 'Open to Recommendations'] },
+                      options: ['Outdoor Cinema', 'Chef-Led Culinary Classes & Tasting Tables', 'Curated Breakfasts, Lunches & Dinners', 'Bonfire Nights', 'Canvas & Pour', 'Upcoming Gather Event', 'Custom / Private Gathering'] },
                     { id: 'groupSize', label: 'Group Size',                  type: 'select',   required: false,
                       options: ['Just me', '2–5 people', '6–10 people', '10+ people'] },
                     { id: 'dates',     label: 'Preferred Date or Month',     type: 'text',     required: false, placeholder: 'e.g. Any Saturday next month' },
@@ -460,7 +460,7 @@
                     { id: 'email',        label: 'Email Address',                       type: 'email',    required: true },
                     { id: 'phone',        label: 'Phone Number (Optional)',             type: 'tel',      required: false, placeholder: 'e.g. 078 000 0000' },
                     { id: 'retreatType',  label: 'Retreat Experience Type',             type: 'select',   required: true,
-                      options: ['Solo Retreats', 'Couples Retreats', 'Youth Camps', 'Reflection Retreats'] },
+                      options: ['Solo Retreats', 'Couples Retreats', 'The Lusuba Retreat', 'Youth Camps', 'Upcoming Retreat', 'Custom / Private Retreat'] },
                     { id: 'attendees',    label: 'Number of Attendees',                 type: 'select',   required: false,
                       options: ['1 person', '2 people', '3–5 people', '6–10 people', '10+ people'] },
                     { id: 'dates',        label: 'Preferred Dates',                     type: 'text',     required: false, placeholder: 'e.g. Flexible weekend' },
@@ -492,7 +492,7 @@
                     { id: 'email',         label: 'Email Address',                               type: 'email',    required: true },
                     { id: 'phone',         label: 'Phone Number (Optional)',                     type: 'tel',      required: false, placeholder: 'e.g. 078 000 0000' },
                     { id: 'gatheringType', label: 'Faith Gathering Type',                        type: 'select',   required: true,
-                      options: ['Scripture Reflection', 'Prayer Evenings', 'Bible Study', 'Praise & Worship Events', 'Open to Anything'] },
+                      options: ['Prayers Experiences', 'Bible Study', 'Bible-Based Retreats', 'Music Events', 'Upcoming Faith Gathering', 'Open to Anything'] },
                     { id: 'firstTime',     label: 'Have you attended before?',                   type: 'select',   required: false,
                       options: ['No, it is my first time', 'Yes, I have attended before'] },
                     { id: 'message',       label: 'Anything you would like us to know?',         type: 'textarea', required: false },
@@ -1091,7 +1091,7 @@
             </footer>
         );
 
-        // ── HOME PAGE (White Hero -> Dark Welcome -> White Pillars -> Dark Social -> Dark Footer) ──
+        // ── HOME PAGE (Warm Ivory Hero -> Dark Welcome -> White Pillars -> Dark Social -> Dark Footer) ──
         const HomePage = ({ setCurrentPage }) => {
             const onCardMove = (e) => {
                 const r = e.currentTarget.getBoundingClientRect();
@@ -1130,80 +1130,86 @@
 
             return (
                 <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
-                    {/* 1. MINIMALIST WHITE HERO */}
-                    <section className="relative pt-28 pb-16 hero-full w-full bg-white text-[#1a1a1a] flex items-center justify-center">
+                    {/* 1. MINIMALIST WARM IVORY HERO */}
+                    <section
+                        className="relative pt-28 pb-16 hero-full w-full text-[#1a1a1a] flex items-center justify-center overflow-hidden"
+                        style={{
+                            background: 'radial-gradient(circle at 50% 44%, rgba(209, 107, 61, 0.08), transparent 58%), #faf7f2'
+                        }}
+                    >
                         <div className="relative z-10 flex flex-col items-center text-center section-px w-full max-w-3xl mx-auto">
-                            <motion.div
-                                initial={{ opacity: 0, scale: 0.94, y: 18 }}
-                                animate={{ opacity: 1, scale: 1, y: 0 }}
-                                transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-                                className="mb-8"
-                            >
-                                <SafeImage
-                                    sources={ASSETS.logoFull}
-                                    alt="Garden of Vee"
-                                    className="mx-auto object-contain mix-blend-multiply"
-                                    style={{ width: 'clamp(240px, 55vw, 460px)', height: 'auto' }}
-                                />
-                            </motion.div>
-
-                            <motion.h1
+                            <motion.p
                                 initial={{ opacity: 0, y: 12 }}
                                 animate={{ opacity: 1, y: 0 }}
-                                transition={{ delay: 0.25, duration: 0.7 }}
-                                className="text-[#1a1a1a] font-light tracking-[0.28em] sm:tracking-[0.32em] mb-12 uppercase flex flex-wrap items-center justify-center gap-x-3 gap-y-1"
-                                style={{ fontSize: 'clamp(0.75rem, 2.2vw, 1.15rem)' }}
+                                transition={{ duration: 0.65 }}
+                                className="text-[#1a1a1a]/60 font-medium tracking-[0.34em] sm:tracking-[0.38em] mb-8 uppercase flex flex-wrap items-center justify-center gap-x-3 gap-y-1"
+                                style={{ fontSize: 'clamp(0.68rem, 1.8vw, 0.85rem)' }}
                             >
                                 <span>Breathe</span>
                                 <span className="text-[#D16B3D] font-semibold">·</span>
                                 <span>Belong</span>
                                 <span className="text-[#D16B3D] font-semibold">·</span>
                                 <span>Become</span>
-                            </motion.h1>
+                            </motion.p>
+
+                            <motion.div
+                                initial={{ opacity: 0, scale: 0.94, y: 16 }}
+                                animate={{ opacity: 1, scale: 1, y: 0 }}
+                                transition={{ duration: 0.85, delay: 0.12, ease: [0.22, 1, 0.36, 1] }}
+                                className="mb-10"
+                            >
+                                <SafeImage
+                                    sources={ASSETS.logoFull}
+                                    alt="Garden of Vee"
+                                    className="mx-auto object-contain mix-blend-multiply"
+                                    style={{ width: 'clamp(230px, 52vw, 420px)', height: 'auto' }}
+                                />
+                            </motion.div>
 
                             <motion.div
                                 initial={{ opacity: 0, y: 14 }}
                                 animate={{ opacity: 1, y: 0 }}
-                                transition={{ delay: 0.4, duration: 0.7 }}
-                                className="flex flex-col sm:flex-row items-center gap-4 sm:gap-5"
+                                transition={{ delay: 0.28, duration: 0.7 }}
+                                className="flex flex-col items-center gap-3.5 w-full max-w-[300px]"
                             >
                                 <button
                                     type="button"
-                                    onClick={() => scrollToElement('experiences')}
-                                    className="px-8 py-3.5 rounded-full bg-[#1a1a1a] text-white text-[11px] uppercase tracking-[0.24em] font-bold hover:bg-[#D16B3D] transition-colors duration-300 shadow-lg whitespace-nowrap"
+                                    onClick={() => scrollToElement('follow-the-journey')}
+                                    className="w-full px-8 py-4 rounded-full bg-[#1a1a1a] text-white text-[10.5px] sm:text-[11px] uppercase tracking-[0.24em] font-bold hover:bg-[#D16B3D] transition-colors duration-300 shadow-lg whitespace-nowrap"
                                 >
-                                    Explore experiences
+                                    Join the Experience
                                 </button>
                                 <button
                                     type="button"
-                                    onClick={() => scrollToElement('footer')}
-                                    className="px-8 py-3.5 rounded-full border border-[#1a1a1a]/25 text-[#1a1a1a] text-[11px] uppercase tracking-[0.24em] font-bold hover:border-[#D16B3D] hover:text-[#D16B3D] transition-colors duration-300 whitespace-nowrap"
+                                    onClick={() => scrollToElement('experiences')}
+                                    className="w-full px-8 py-4 rounded-full border border-[#1a1a1a]/30 bg-white/70 text-[#1a1a1a] text-[10.5px] sm:text-[11px] uppercase tracking-[0.24em] font-bold hover:border-[#D16B3D] hover:text-[#D16B3D] transition-colors duration-300 whitespace-nowrap"
                                 >
-                                    Contact Us
+                                    Explore the Experience
                                 </button>
                             </motion.div>
                         </div>
                     </section>
 
-                    {/* 2. DARK SECTION: STREAMLINED WELCOME & 2-SENTENCE SUMMARY */}
-                    <section id="welcome" className="relative section-py bg-[#1a1a1a] text-white overflow-hidden">
+                    {/* 2. DARK SECTION: WELCOME STATEMENT */}
+                    <section id="welcome" className="relative section-py bg-[#161514] text-white overflow-hidden">
                         <BackgroundBlob color="#D16B3D" size="420px" position={{ top: '-120px', right: '-120px' }} opacity={0.07} />
-                        <div className="max-w-5xl mx-auto section-px relative z-10 text-center">
+                        <div className="max-w-3xl mx-auto section-px relative z-10 text-center">
                             <RevealSection>
-                                <div className="w-16 h-16 rounded-full border border-white/20 flex items-center justify-center mx-auto mb-8 text-[#c9975b]">
-                                    <svg width="28" height="28" viewBox="0 0 40 40" fill="none">
-                                        <path d="M20 8 C20 8, 12 14, 12 22 C12 28, 16 32, 20 32 C24 32, 28 28, 28 22 C28 14, 20 8, 20 8Z" stroke="currentColor" strokeWidth="1.5" />
-                                        <path d="M20 32 L20 36M14 20 C14 20, 8 18, 7 14M26 20 C26 20, 32 18, 33 14" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" />
-                                    </svg>
-                                </div>
-
-                                <h2 className="font-display font-medium text-white leading-snug tracking-tight mb-6" style={{ fontSize: 'clamp(1.5rem, 3.6vw, 2.5rem)' }}>
-                                    Whether you come solo, with others, or with your organisation —{' '}
-                                    <span className="text-[#D16B3D] italic">we host experiences that meet you there.</span>
+                                <h2
+                                    className="font-display font-medium text-white leading-[1.28] tracking-tight mb-7"
+                                    style={{ fontSize: 'clamp(1.65rem, 3.8vw, 2.65rem)' }}
+                                >
+                                    Whether you come solo, with your circle, or as an organisation,{' '}
+                                    <span className="text-[#D16B3D] italic">
+                                        we create experiences designed to meet you right where you are.
+                                    </span>
                                 </h2>
 
-                                <p className="text-gray-300 font-light leading-relaxed max-w-2xl mx-auto mb-0" style={{ fontSize: 'clamp(0.95rem, 2vw, 1.125rem)' }}>
-                                    Garden of Vee creates intentional spaces for creative community, unhurried rest, spiritual reflection, and workplace renewal. Every experience is crafted to help you slow down, connect deeply, and simply belong.
+                                <p
+                                    className="text-white/65 font-light leading-relaxed max-w-xl mx-auto mb-0"
+                                    style={{ fontSize: 'clamp(0.95rem, 2vw, 1.08rem)' }}
+                                >
+                                    At its heart, Garden of Vee is a welcoming ground for community, collaboration, and shared purpose where individual journeys and collective focus come together.
                                 </p>
                             </RevealSection>
                         </div>
@@ -1363,301 +1369,569 @@
             );
         };
 
-        // ── 1. GATHER EXPERIENCE PAGE (Dark #1a1a1a, uses moments.mp4 + dining photo) ──
-        const GatherExperiencePage = ({ openModal }) => {
-            const events = [
-                { name: 'Sip & Paint', desc: 'An evening of guided creativity exploring self-expression through canvas and colour — no experience needed.' },
-                { name: 'Poetry Events', desc: 'Honest spoken word evenings that invite you to listen, feel, and connect through authentic storytelling.' },
-                { name: 'Slow Craft Events', desc: 'Intentional crafting sessions that bring you into the present moment — weaving, journaling, and making by hand.' },
-                { name: 'Outdoor Movie Nights', desc: 'Cosy evenings under the stars with curated films, warm food, and great company.' },
-                { name: 'Listening Sessions', desc: 'A calm space for music — neo-soul, gospel, and ambient sounds played with intention.' },
-                { name: 'Neo-Soul Events', desc: 'Immersive music evenings rooted in soulful sounds, live instruments, and welcoming community.' },
-                { name: 'Live Music Events', desc: 'Intimate live performances celebrating local and emerging artists in an unhurried setting.' },
-                { name: 'Dining Events', desc: 'Thoughtfully prepared meals shared around a table together — slowing down to savour food and conversation.' },
-                { name: 'Bonfire Evenings', desc: 'Gather around the fire for open conversation, shared stillness, and warm community.' },
-            ];
+        // ── SHARED INDIVIDUAL EXPERIENCE PAGE TEMPLATE ───────────────────
+        const ExperiencePageTemplate = ({
+            theme = 'dark',
+            eyebrow = 'Breathe. Belong. Become.',
+            title,
+            bannerSubtitle,
+            intro,
+            ctaLabel,
+            onCtaClick,
+            filters = [],
+            categories = [],
+            enquiryType,
+            openModal,
+            quoteCard = null,
+        }) => {
+            const isDark = theme === 'dark';
+            const [activeFilter, setActiveFilter] = useState('all');
+
+            const visibleCategories =
+                activeFilter === 'all'
+                    ? categories
+                    : categories.filter((cat) => cat.filterId === activeFilter);
 
             return (
-                <motion.section initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="relative pt-28 pb-20 md:pt-36 md:pb-28 bg-[#1a1a1a] text-white min-h-screen overflow-hidden">
-                    <div className="absolute inset-0 pointer-events-none opacity-[0.18]">
-                        <SafeImage
-                            sources={ASSETS.diningPhoto}
-                            alt=""
-                            hideOnError
-                            className="w-full h-full object-cover"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-b from-[#1a1a1a]/90 via-[#1a1a1a]/65 to-[#1a1a1a]" />
-                    </div>
+                <motion.section
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    className={`relative pt-28 pb-20 md:pt-36 md:pb-28 min-h-screen overflow-hidden ${
+                        isDark ? 'bg-[#161514] text-white' : 'bg-[#faf8f5] text-[#1a1a1a]'
+                    }`}
+                >
+                    <BackgroundBlob
+                        color="#D16B3D"
+                        size="420px"
+                        position={{ top: '-140px', right: '-140px' }}
+                        opacity={isDark ? 0.055 : 0.045}
+                    />
+                    <BackgroundBlob
+                        color="#717254"
+                        size="360px"
+                        position={{ bottom: '-120px', left: '-120px' }}
+                        opacity={isDark ? 0.05 : 0.04}
+                        delay={0.3}
+                    />
 
-                    <div className="max-w-6xl mx-auto section-px relative z-10">
-                        <RevealSection className="mb-10 md:mb-12 text-center">
-                            <h1 className="exp-heading text-white">Gather Experience</h1>
-                        </RevealSection>
+                    <div className="max-w-3xl mx-auto section-px relative z-10">
+                        {/* Header & Eyebrow */}
+                        <motion.div
+                            initial={{ opacity: 0, y: 16 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                            className="text-center"
+                        >
+                            <span
+                                className={`block text-[10px] sm:text-[10.5px] uppercase tracking-[0.36em] font-semibold mb-3.5 ${
+                                    isDark ? 'text-[#b57a5d]' : 'text-[#a66e53]'
+                                }`}
+                            >
+                                {eyebrow}
+                            </span>
+                            <h1
+                                className={`font-display font-medium tracking-tight mb-8 sm:mb-10 ${
+                                    isDark ? 'text-white' : 'text-[#1a1a1a]'
+                                }`}
+                                style={{ fontSize: 'clamp(2.25rem, 5.5vw, 3.6rem)', lineHeight: 1.08 }}
+                            >
+                                {title}
+                            </h1>
+                        </motion.div>
 
-                        <RevealSection className="mb-12">
-                            <div className="w-full rounded-[2rem] md:rounded-[3rem] overflow-hidden aspect-video max-w-5xl mx-auto shadow-2xl border border-white/10 bg-black">
-                                <SafeVideo
-                                    sources={ASSETS.gatherVideo}
-                                    fallbackImages={ASSETS.diningPhoto}
-                                    alt="Gather Experience"
-                                    className="w-full h-full object-cover object-[50%_42%] scale-[1.14]"
-                                />
-                            </div>
-                        </RevealSection>
-
-                        <RevealSection className="max-w-3xl mx-auto text-center mb-14 md:mb-16">
-                            <p className="exp-intro text-gray-300">
-                                Curated experiences designed to foster connection, creativity, and community in welcoming settings. Select any gathering below to send an email enquiry directly.
-                            </p>
-                        </RevealSection>
-
-                        <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                            {events.map((item) => (
-                                <button
-                                    key={item.name}
-                                    type="button"
-                                    onClick={() => openModal('gather', item.name)}
-                                    className="w-full h-full group text-left p-7 rounded-[1.75rem] bg-white/[0.06] hover:bg-white/[0.11] border border-white/10 hover:border-[#D16B3D]/60 transition-all duration-300 flex flex-col justify-between backdrop-blur-sm focus:outline-none"
-                                >
-                                    <div>
-                                        <h3 className="exp-item-title text-white group-hover:text-[#D16B3D] transition-colors mb-2.5">
-                                            {item.name}
-                                        </h3>
-                                        <p className="exp-item-desc text-gray-300/90">
-                                            {item.desc}
-                                        </p>
-                                    </div>
-                                    <div className="mt-6 inline-flex items-center text-[11px] uppercase tracking-[0.22em] font-bold text-[#D16B3D]">
-                                        <span>Enquire</span>
-                                        <svg className="w-3.5 h-3.5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                                        </svg>
-                                    </div>
-                                </button>
-                            ))}
-                        </StaggerContainer>
-                    </div>
-                </motion.section>
-            );
-        };
-
-        // ── 2. RETREAT EXPERIENCE PAGE (White #fcfbf9, uses retreats.mp4) ─
-        const RetreatExperiencePage = ({ openModal }) => {
-            const retreats = [
-                { title: 'Solo Retreats', desc: 'Carved-out time for personal quietude and deep reflection. No agenda, no performance — just space to breathe and be restored.' },
-                { title: 'Couples Retreats', desc: 'A retreat for two, designed to nurture connection, restore closeness, and create shared memories in an unhurried setting.' },
-                { title: 'Youth Camps', desc: 'Transformative experiences for young people combining outdoor adventure, faith, and community to build confidence and lasting friendships.' },
-                { title: 'Reflection Retreats', desc: 'Gentle guided retreats inviting inner stillness, journaling, scripture, and prayerful reflection in a supportive environment.' },
-            ];
-
-            return (
-                <motion.section initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="relative pt-28 pb-20 md:pt-36 md:pb-28 bg-[#fcfbf9] text-[#1a1a1a] min-h-screen overflow-hidden">
-                    <div className="max-w-6xl mx-auto section-px relative z-10">
-                        <RevealSection className="mb-10 md:mb-12 text-center">
-                            <h1 className="exp-heading text-[#1a1a1a]">Retreat Experience</h1>
-                        </RevealSection>
-
-                        <RevealSection className="mb-12">
-                            <div className="w-full rounded-[2rem] md:rounded-[3rem] overflow-hidden aspect-video max-w-5xl mx-auto shadow-2xl border border-gray-200 bg-[#1a1a1a]">
-                                <SafeVideo
-                                    sources={ASSETS.retreatVideo}
-                                    fallbackImages={ASSETS.retreatPhoto}
-                                    alt="Retreat Experience"
-                                    className="w-full h-full object-cover object-[50%_42%] scale-[1.12]"
-                                />
-                            </div>
-                        </RevealSection>
-
-                        <RevealSection className="max-w-3xl mx-auto text-center mb-14 md:mb-16">
-                            <p className="exp-intro text-gray-600">
-                                Time set aside to slow down and reset — alone or together. Solo time is always respected, community is available when you want it, and clicking any retreat below opens a direct email enquiry.
-                            </p>
-                        </RevealSection>
-
-                        <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-                            {retreats.map((item) => (
-                                <button
-                                    key={item.title}
-                                    type="button"
-                                    onClick={() => openModal('retreat', item.title)}
-                                    className="w-full h-full card-hover-3d group text-left p-8 rounded-[2rem] border border-gray-200 bg-white hover:border-[#D16B3D]/50 transition-all shadow-sm flex flex-col justify-between focus:outline-none"
-                                >
-                                    <div>
-                                        <h3 className="exp-item-title text-[#1a1a1a] group-hover:text-[#D16B3D] transition-colors mb-3">
-                                            {item.title}
-                                        </h3>
-                                        <p className="exp-item-desc text-gray-500">
-                                            {item.desc}
-                                        </p>
-                                    </div>
-                                    <div className="mt-6 inline-flex items-center text-[11px] uppercase tracking-[0.22em] font-bold text-[#717254] group-hover:text-[#D16B3D] transition-colors">
-                                        <span>Enquire</span>
-                                        <svg className="w-3.5 h-3.5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                                        </svg>
-                                    </div>
-                                </button>
-                            ))}
-                        </StaggerContainer>
-                    </div>
-                </motion.section>
-            );
-        };
-
-        // ── 3. FAITH EXPERIENCE PAGE (Dark #1a1a1a, displays Bible + Holding Hands) ──
-        const FaithExperiencePage = ({ openModal }) => {
-            const sessions = [
-                { name: 'Scripture Reflection', desc: 'Thoughtful conversations around Biblical text — grounded, contextual, and open to honest questions.' },
-                { name: 'Prayer Evenings', desc: 'Quiet, intentional evenings of prayer held in a warm and welcoming space.' },
-                { name: 'Bible Study', desc: 'Focused sessions exploring scripture in full context, guided with care and depth.' },
-                { name: 'Praise & Worship Events', desc: 'Evenings of music and communal worship celebrating shared faith and presence.' },
-            ];
-
-            return (
-                <motion.section initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="relative pt-28 pb-20 md:pt-36 md:pb-28 bg-[#1a1a1a] text-white min-h-screen overflow-hidden">
-                    <div className="max-w-6xl mx-auto section-px relative z-10">
-                        <RevealSection className="mb-10 md:mb-12 text-center">
-                            <h1 className="exp-heading text-white">Faith Experience</h1>
-                        </RevealSection>
-
-                        <RevealSection className="mb-12">
-                            <div className="w-full rounded-[2rem] md:rounded-[3rem] overflow-hidden aspect-video max-w-5xl mx-auto shadow-2xl border border-white/10">
-                                <SafeImage
-                                    sources={ASSETS.faithBible}
-                                    alt="Faith Experience — Open Bible"
-                                    className="w-full h-full object-cover"
-                                />
-                            </div>
-                        </RevealSection>
-
-                        <RevealSection className="max-w-3xl mx-auto text-center mb-14 md:mb-16">
-                            <p className="exp-intro text-gray-300">
-                                Christian-rooted spaces for prayer, Bible-based scripture, and reflection. Participation is always optional, and all are welcome — select an option below or join using the button at the bottom.
-                            </p>
-                        </RevealSection>
-
-                        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 max-w-6xl mx-auto mb-16 items-stretch">
-                            <div className="lg:col-span-7">
-                                <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 gap-5 h-full">
-                                    {sessions.map((item) => (
-                                        <button
-                                            key={item.name}
-                                            type="button"
-                                            onClick={() => openModal('faith', item.name)}
-                                            className="w-full h-full group text-left p-7 rounded-[1.75rem] bg-white/[0.04] hover:bg-white/[0.09] border border-white/10 hover:border-[#c9975b]/60 transition-all duration-300 flex flex-col justify-between focus:outline-none"
-                                        >
-                                            <div>
-                                                <h3 className="exp-item-title text-white group-hover:text-[#c9975b] transition-colors mb-2.5">
-                                                    {item.name}
-                                                </h3>
-                                                <p className="exp-item-desc text-gray-400">
-                                                    {item.desc}
-                                                </p>
-                                            </div>
-                                            <div className="mt-5 inline-flex items-center text-[11px] uppercase tracking-[0.22em] font-bold text-[#c9975b]">
-                                                <span>Enquire</span>
-                                                <svg className="w-3.5 h-3.5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                                                </svg>
-                                            </div>
-                                        </button>
-                                    ))}
-                                </StaggerContainer>
-                            </div>
-
-                            <RevealSection className="lg:col-span-5 flex">
-                                <div className="glass-dark w-full rounded-[2rem] overflow-hidden flex flex-col justify-between text-left">
-                                    <div className="w-full aspect-[16/9] overflow-hidden">
-                                        <SafeImage
-                                            sources={ASSETS.faithHands}
-                                            alt="Faith Experience — Community Prayer Circle"
-                                            className="w-full h-full object-cover"
-                                        />
-                                    </div>
-                                    <div className="p-8 sm:p-10">
-                                        <h3 className="text-[11px] uppercase tracking-[0.35em] font-black text-[#c9975b] mb-4">The Faith</h3>
-                                        <p className="text-lg md:text-xl font-light text-gray-200 leading-relaxed italic">
-                                            "Biblically grounded spaces centred on Christian doctrine with Bible-based scripture. Open to believers and seekers alike."
-                                        </p>
-                                    </div>
+                        {/* Editorial Dark Hero Banner Card */}
+                        <motion.div
+                            initial={{ opacity: 0, y: 18 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.55, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
+                            className="mb-8 sm:mb-10 rounded-[1.4rem] sm:rounded-[1.75rem] px-6 py-14 sm:py-20 text-center relative overflow-hidden border border-white/10"
+                            style={{
+                                background:
+                                    'radial-gradient(circle at 75% 22%, rgba(209, 107, 61, 0.16), transparent 58%), radial-gradient(circle at 18% 85%, rgba(201, 151, 91, 0.08), transparent 55%), linear-gradient(155deg, #252220 0%, #171615 100%)',
+                                boxShadow:
+                                    'inset 0 1px 0 rgba(255, 255, 255, 0.06), 0 24px 48px -18px rgba(0, 0, 0, 0.35)',
+                            }}
+                        >
+                            <div className="relative z-10">
+                                <div className="font-display italic text-2xl sm:text-4xl text-white font-normal tracking-tight">
+                                    {title}
                                 </div>
-                            </RevealSection>
+                                <div className="mt-3 text-[10px] sm:text-[11px] uppercase tracking-[0.28em] font-semibold text-[#D16B3D]">
+                                    {bannerSubtitle}
+                                </div>
+                            </div>
+                        </motion.div>
+
+                        {/* Intro Copy & Top CTA */}
+                        <motion.div
+                            initial={{ opacity: 0, y: 14 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.5, delay: 0.14, ease: [0.22, 1, 0.36, 1] }}
+                            className="text-center max-w-2xl mx-auto mb-10"
+                        >
+                            <p
+                                className={`text-[14px] sm:text-[15px] font-light leading-relaxed mb-6 ${
+                                    isDark ? 'text-white/70' : 'text-[#55504a]'
+                                }`}
+                            >
+                                {intro}
+                            </p>
+                            <button
+                                type="button"
+                                onClick={onCtaClick}
+                                className="inline-flex items-center gap-2 text-[10.5px] sm:text-[11px] uppercase tracking-[0.24em] font-bold text-[#D16B3D] hover:text-[#e88a5e] transition-colors group"
+                            >
+                                <span>{ctaLabel}</span>
+                                <span
+                                    aria-hidden="true"
+                                    className="transition-transform duration-300 group-hover:translate-x-1"
+                                >
+                                    →
+                                </span>
+                            </button>
+                        </motion.div>
+
+                        {/* Filter Pill Tabs */}
+                        <div className="flex flex-wrap items-center justify-center gap-2.5 sm:gap-3 mb-12">
+                            {filters.map((filter) => {
+                                const isActive = activeFilter === filter.id;
+                                return (
+                                    <button
+                                        key={filter.id}
+                                        type="button"
+                                        aria-pressed={isActive}
+                                        onClick={() => setActiveFilter(filter.id)}
+                                        className={
+                                            'px-4 sm:px-5 py-2.5 rounded-full text-[10px] sm:text-[10.5px] uppercase tracking-[0.18em] font-bold transition-all duration-200 ' +
+                                            (isActive
+                                                ? 'bg-[#e07e4e] text-[#141414] border border-[#e07e4e] shadow-sm'
+                                                : isDark
+                                                    ? 'bg-white/[0.04] text-white/80 border border-white/15 hover:border-[#D16B3D]/55 hover:text-white'
+                                                    : 'bg-white text-[#1a1a1a]/75 border border-[#1a1a1a]/12 hover:border-[#D16B3D]/55 hover:text-[#1a1a1a] shadow-sm')
+                                        }
+                                    >
+                                        {filter.label}
+                                    </button>
+                                );
+                            })}
                         </div>
 
-                        <div className="text-center">
-                            <GlowButton variant="light" onClick={() => openModal('faith')}>
-                                Join a Gathering
-                            </GlowButton>
-                        </div>
+                        {/* Categorized Cards List */}
+                        <AnimatePresence mode="wait">
+                            <motion.div
+                                key={activeFilter}
+                                initial={{ opacity: 0, y: 10 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                exit={{ opacity: 0, y: -6 }}
+                                transition={{ duration: 0.22, ease: 'easeOut' }}
+                                className="space-y-10"
+                            >
+                                {visibleCategories.map((cat) => (
+                                    <div key={cat.id}>
+                                        <div
+                                            className={`flex items-baseline justify-between gap-4 pb-2.5 mb-4 border-b ${
+                                                isDark ? 'border-white/10' : 'border-[#1a1a1a]/10'
+                                            }`}
+                                        >
+                                            <h2 className="text-[10.5px] sm:text-[11px] uppercase tracking-[0.22em] font-bold text-[#D16B3D]">
+                                                {cat.label}
+                                            </h2>
+                                            <span
+                                                className={`text-[11px] font-light ${
+                                                    isDark ? 'text-white/45' : 'text-[#1a1a1a]/45'
+                                                }`}
+                                            >
+                                                {cat.countLabel}
+                                            </span>
+                                        </div>
+
+                                        <div className="space-y-4">
+                                            {cat.items.map((item) => (
+                                                <button
+                                                    key={item.title}
+                                                    type="button"
+                                                    onClick={() => openModal(enquiryType, item.title)}
+                                                    className={
+                                                        'w-full group text-left rounded-[1.25rem] sm:rounded-[1.5rem] p-6 sm:p-7 transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#D16B3D] ' +
+                                                        (isDark
+                                                            ? 'bg-white/[0.03] hover:bg-white/[0.06] border border-white/10 hover:border-[#D16B3D]/55'
+                                                            : 'bg-white border border-[#1a1a1a]/10 hover:border-[#D16B3D]/55 shadow-sm hover:shadow-md')
+                                                    }
+                                                >
+                                                    <h3
+                                                        className={`font-display font-medium text-xl sm:text-[1.45rem] leading-snug mb-2 transition-colors ${
+                                                            isDark
+                                                                ? 'text-white group-hover:text-[#D16B3D]'
+                                                                : 'text-[#1a1a1a] group-hover:text-[#D16B3D]'
+                                                        }`}
+                                                    >
+                                                        {item.title}
+                                                    </h3>
+                                                    <p
+                                                        className={`text-sm sm:text-[15px] font-light leading-relaxed mb-5 ${
+                                                            isDark ? 'text-white/65' : 'text-[#1a1a1a]/65'
+                                                        }`}
+                                                    >
+                                                        {item.desc}
+                                                    </p>
+                                                    <span className="inline-flex items-center gap-2 text-[10.5px] sm:text-[11px] uppercase tracking-[0.22em] font-bold text-[#D16B3D]">
+                                                        <span>Enquire</span>
+                                                        <span
+                                                            aria-hidden="true"
+                                                            className="transition-transform duration-300 group-hover:translate-x-1"
+                                                        >
+                                                            →
+                                                        </span>
+                                                    </span>
+                                                </button>
+                                            ))}
+                                        </div>
+                                    </div>
+                                ))}
+                            </motion.div>
+                        </AnimatePresence>
+
+                        {/* Optional Faith Statement Quote Card */}
+                        {quoteCard && (
+                            <motion.div
+                                initial={{ opacity: 0, y: 14 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.45, delay: 0.15 }}
+                                className="mt-12 rounded-[1.4rem] sm:rounded-[1.65rem] p-8 sm:p-11 text-center border border-white/10 bg-white/[0.03]"
+                            >
+                                <div className="text-[10px] sm:text-[10.5px] uppercase tracking-[0.34em] font-bold text-[#D16B3D] mb-4">
+                                    {quoteCard.eyebrow}
+                                </div>
+                                <p className="font-display italic text-lg sm:text-[1.35rem] leading-relaxed text-white/90 max-w-xl mx-auto mb-5">
+                                    {quoteCard.quote}
+                                </p>
+                                <div className="text-[10px] uppercase tracking-[0.32em] font-semibold text-white/45">
+                                    {quoteCard.attribution}
+                                </div>
+                            </motion.div>
+                        )}
                     </div>
                 </motion.section>
             );
         };
 
-        // ── 4. CORPORATE EXPERIENCE PAGE (White #fcfbf9, uses Sticky Notes) ──
-        const CorporateExperiencePage = ({ openModal }) => {
-            const programs = [
-                { title: 'Team Building', desc: 'Interactive sessions that bring team vision, values, and goals into clear shared focus so everyone moves forward together.' },
-                { title: 'Leadership Events', desc: 'Facilitated workshops developing emotional intelligence, clear communication, and people-first leadership.' },
-                { title: 'Corporate Well-being', desc: 'Workplace wellness sessions designed to address burnout, restore energy, and help teams genuinely thrive.' },
+        // ── 1. GATHER EXPERIENCE PAGE (Dark #161514) ─────────────────────
+        const GatherExperiencePage = ({ openModal }) => {
+            const filters = [
+                { id: 'all', label: 'All Gatherings (5)' },
+                { id: 'cinema', label: 'Cinema' },
+                { id: 'food-dining', label: 'Food & Dining' },
+                { id: 'bonfire-nights', label: 'Bonfire Nights' },
+                { id: 'sip-paint', label: 'Sip & Paint' },
+            ];
+
+            const categories = [
+                {
+                    id: 'cinema',
+                    filterId: 'cinema',
+                    label: 'Cinema',
+                    countLabel: '1 format',
+                    items: [
+                        {
+                            title: 'Outdoor Cinema',
+                            desc: 'Open-air film screenings under the sky followed by conversation over shared snacks.',
+                        },
+                    ],
+                },
+                {
+                    id: 'food-dining',
+                    filterId: 'food-dining',
+                    label: 'Food & Dining',
+                    countLabel: '2 formats',
+                    items: [
+                        {
+                            title: 'Chef-Led Culinary Classes & Tasting Tables',
+                            desc: 'Guided cooking classes and culinary sessions led by professional chefs, paired with dining experiences.',
+                        },
+                        {
+                            title: 'Curated Breakfasts, Lunches & Dinners',
+                            desc: 'Shared tables and seasonal food gatherings across breakfast, lunch, and dinner crafted for warmth, flavour, and connection.',
+                        },
+                    ],
+                },
+                {
+                    id: 'bonfire-nights',
+                    filterId: 'bonfire-nights',
+                    label: 'Bonfire Nights',
+                    countLabel: '1 format',
+                    items: [
+                        {
+                            title: 'Bonfire Nights',
+                            desc: 'Evenings gathered around an outdoor fire for fireside conversation, music, and connection.',
+                        },
+                    ],
+                },
+                {
+                    id: 'sip-paint',
+                    filterId: 'sip-paint',
+                    label: 'Sip & Paint',
+                    countLabel: '1 format',
+                    items: [
+                        {
+                            title: 'Canvas & Pour',
+                            desc: 'Guided painting with your favourite drink in hand, with no prior art experience needed.',
+                        },
+                    ],
+                },
             ];
 
             return (
-                <motion.section initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="relative pt-28 pb-20 md:pt-36 md:pb-28 bg-[#fcfbf9] text-[#1a1a1a] min-h-screen overflow-hidden">
-                    <div className="max-w-6xl mx-auto section-px relative z-10">
-                        <RevealSection className="mb-10 md:mb-12 text-center">
-                            <h1 className="exp-heading text-[#1a1a1a]">Corporate Experience</h1>
-                        </RevealSection>
+                <ExperiencePageTemplate
+                    theme="dark"
+                    title="Gather Experience"
+                    bannerSubtitle="Curated Experiences · We Host & Tailor"
+                    intro={
+                        <>
+                            Upcoming events are posted on our social media platforms under{' '}
+                            <strong className="font-semibold text-white">Join the Experience</strong> button. Interested in a private gathering? We host and tailor these experiences for you - Select your desired experience below to enquire.
+                        </>
+                    }
+                    ctaLabel="Join an Upcoming Gathering"
+                    onCtaClick={() => openModal('gather', 'Upcoming Gather Event')}
+                    filters={filters}
+                    categories={categories}
+                    enquiryType="gather"
+                    openModal={openModal}
+                />
+            );
+        };
 
-                        <RevealSection className="mb-12">
-                            <div className="w-full rounded-[2rem] md:rounded-[3rem] overflow-hidden aspect-video max-w-5xl mx-auto shadow-2xl border border-gray-200">
-                                <SafeImage
-                                    sources={ASSETS.corpNotes}
-                                    alt="Corporate Experience — Team Collaboration"
-                                    className="w-full h-full object-cover"
-                                />
-                            </div>
-                        </RevealSection>
+        // ── 2. RETREAT EXPERIENCE PAGE (Light #faf8f5) ───────────────────
+        const RetreatExperiencePage = ({ openModal }) => {
+            const filters = [
+                { id: 'all', label: 'All Retreats (4)' },
+                { id: 'solo-retreats', label: 'Solo Retreats' },
+                { id: 'couples-retreats', label: 'Couples Retreats' },
+                { id: 'healing', label: 'Healing' },
+                { id: 'youth-camps', label: 'Youth Camps' },
+            ];
 
-                        <RevealSection className="max-w-3xl mx-auto text-center mb-14 md:mb-16">
-                            <p className="exp-intro text-gray-600">
-                                Facilitated experiences designed to support team alignment, leadership growth, and workplace well-being. Select any focus area below to start an enquiry for your organisation.
-                            </p>
-                        </RevealSection>
+            const categories = [
+                {
+                    id: 'solo-retreats',
+                    filterId: 'solo-retreats',
+                    label: 'Solo Retreats',
+                    countLabel: '1 retreat',
+                    items: [
+                        {
+                            title: 'Solo Retreats',
+                            desc: 'Step away with other solo travelers in a safe, welcoming environment—giving you dedicated time to yourself, space to exhale, and a restorative self-care release.',
+                        },
+                    ],
+                },
+                {
+                    id: 'couples-retreats',
+                    filterId: 'couples-retreats',
+                    label: 'Couples Retreats',
+                    countLabel: '1 retreat',
+                    items: [
+                        {
+                            title: 'Couples Retreats',
+                            desc: 'Intentional time together to rebuild closeness, strengthen communication, and create lasting memories.',
+                        },
+                    ],
+                },
+                {
+                    id: 'healing',
+                    filterId: 'healing',
+                    label: 'Healing',
+                    countLabel: '1 retreat',
+                    items: [
+                        {
+                            title: 'The Lusuba Retreat',
+                            desc: 'A guided healing retreat exploring different subject matters through meaningful dialogue, care, and renewal.',
+                        },
+                    ],
+                },
+                {
+                    id: 'youth-camps',
+                    filterId: 'youth-camps',
+                    label: 'Youth Camps',
+                    countLabel: '1 retreat',
+                    items: [
+                        {
+                            title: 'Youth Camps',
+                            desc: 'Transformative experiences for young people combining outdoor adventure, faith, and community to build confidence and lasting friendships.',
+                        },
+                    ],
+                },
+            ];
 
-                        <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto mb-16">
-                            {programs.map((item) => (
-                                <button
-                                    key={item.title}
-                                    type="button"
-                                    onClick={() => openModal('corporate', item.title)}
-                                    className="w-full h-full card-hover-3d group text-left p-8 rounded-[2rem] bg-white border border-gray-200 hover:border-[#D16B3D]/50 shadow-sm flex flex-col justify-between focus:outline-none"
-                                >
-                                    <div>
-                                        <h3 className="exp-item-title text-[#1a1a1a] group-hover:text-[#D16B3D] transition-colors mb-3">
-                                            {item.title}
-                                        </h3>
-                                        <p className="exp-item-desc text-gray-500">
-                                            {item.desc}
-                                        </p>
-                                    </div>
-                                    <div className="mt-6 inline-flex items-center text-[11px] uppercase tracking-[0.22em] font-bold text-[#D16B3D]">
-                                        <span>Enquire</span>
-                                        <svg className="w-3.5 h-3.5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                                        </svg>
-                                    </div>
-                                </button>
-                            ))}
-                        </StaggerContainer>
+            return (
+                <ExperiencePageTemplate
+                    theme="light"
+                    title="Retreat Experience"
+                    bannerSubtitle="Healing & Restoration · We Host & Tailor"
+                    intro={
+                        <>
+                            Upcoming events are posted on our social media platforms under{' '}
+                            <strong className="font-semibold text-[#1a1a1a]">Join the Experience</strong> button. Interested in a private gathering? We host and tailor these experiences for you. Simply select your desired experience below to enquire.
+                        </>
+                    }
+                    ctaLabel="Join an Upcoming Retreat"
+                    onCtaClick={() => openModal('retreat', 'Upcoming Retreat')}
+                    filters={filters}
+                    categories={categories}
+                    enquiryType="retreat"
+                    openModal={openModal}
+                />
+            );
+        };
 
-                        <div className="text-center">
-                            <GlowButton onClick={() => openModal('corporate')}>
-                                Book a Corporate Experience
-                            </GlowButton>
-                        </div>
-                    </div>
-                </motion.section>
+        // ── 3. FAITH EXPERIENCE PAGE (Dark #161514) ──────────────────────
+        const FaithExperiencePage = ({ openModal }) => {
+            const filters = [
+                { id: 'all', label: 'All Faith Gatherings' },
+                { id: 'prayers-experiences', label: 'Prayers Experiences' },
+                { id: 'bible-study', label: 'Bible Study' },
+                { id: 'bible-based-retreats', label: 'Bible-Based Retreats' },
+                { id: 'music-events', label: 'Music Events' },
+            ];
+
+            const categories = [
+                {
+                    id: 'prayers-experiences',
+                    filterId: 'prayers-experiences',
+                    label: 'Prayers Experiences',
+                    countLabel: '1 experience',
+                    items: [
+                        {
+                            title: 'Prayers Experiences',
+                            desc: 'Guided times of corporate and personal prayer rooted in scripture, stillness, and expectancy.',
+                        },
+                    ],
+                },
+                {
+                    id: 'bible-study',
+                    filterId: 'bible-study',
+                    label: 'Bible Study',
+                    countLabel: '1 experience',
+                    items: [
+                        {
+                            title: 'Bible Study',
+                            desc: 'Focused sessions exploring scripture in full context, guided with care and depth.',
+                        },
+                    ],
+                },
+                {
+                    id: 'bible-based-retreats',
+                    filterId: 'bible-based-retreats',
+                    label: 'Bible-Based Retreats',
+                    countLabel: '1 experience',
+                    items: [
+                        {
+                            title: 'Bible-Based Retreats',
+                            desc: 'Intentional retreats grounded in scripture, quiet reflection, and spiritual renewal.',
+                        },
+                    ],
+                },
+                {
+                    id: 'music-events',
+                    filterId: 'music-events',
+                    label: 'Music Events',
+                    countLabel: '1 experience',
+                    items: [
+                        {
+                            title: 'Music Events',
+                            desc: 'Acoustic worship and faith-inspired music nights welcoming believers and seekers alike.',
+                        },
+                    ],
+                },
+            ];
+
+            return (
+                <ExperiencePageTemplate
+                    theme="dark"
+                    title="Faith Experience"
+                    bannerSubtitle="Prayer, Bible Study, Retreats & Music · We Host & Tailor"
+                    intro={
+                        <>
+                            Upcoming events are posted on our social media platforms under{' '}
+                            <strong className="font-semibold text-white">Join the Experience</strong> button. Interested in a private gathering? We host and tailor these experiences for you - Select your desired experience below to enquire.
+                        </>
+                    }
+                    ctaLabel="Join an Upcoming Gathering"
+                    onCtaClick={() => openModal('faith', 'Upcoming Faith Gathering')}
+                    filters={filters}
+                    categories={categories}
+                    enquiryType="faith"
+                    openModal={openModal}
+                    quoteCard={{
+                        eyebrow: 'The Faith',
+                        quote: '"Biblically grounded spaces centred on Christian doctrine with Bible-based scripture, welcoming believers and honest seekers alike."',
+                        attribution: 'Matthew 18:20',
+                    }}
+                />
+            );
+        };
+
+        // ── 4. CORPORATE EXPERIENCE PAGE (Light #faf8f5) ─────────────────
+        const CorporateExperiencePage = ({ openModal }) => {
+            const filters = [
+                { id: 'all', label: 'All Focus Areas (3)' },
+                { id: 'team-building', label: 'Team Building' },
+                { id: 'leadership', label: 'Leadership' },
+                { id: 'well-being', label: 'Well-being' },
+            ];
+
+            const categories = [
+                {
+                    id: 'team-building',
+                    filterId: 'team-building',
+                    label: 'Team Building',
+                    countLabel: '1 focus area',
+                    items: [
+                        {
+                            title: 'Team Building',
+                            desc: 'Interactive sessions that bring team vision, values, and goals into clear shared focus so everyone moves forward together.',
+                        },
+                    ],
+                },
+                {
+                    id: 'leadership',
+                    filterId: 'leadership',
+                    label: 'Leadership',
+                    countLabel: '1 focus area',
+                    items: [
+                        {
+                            title: 'Leadership Events',
+                            desc: 'Facilitated workshops developing emotional intelligence, clear communication, and people-first leadership.',
+                        },
+                    ],
+                },
+                {
+                    id: 'well-being',
+                    filterId: 'well-being',
+                    label: 'Well-being',
+                    countLabel: '1 focus area',
+                    items: [
+                        {
+                            title: 'Corporate Well-being',
+                            desc: 'Workplace wellness sessions designed to address burnout, restore energy, and help teams genuinely thrive.',
+                        },
+                    ],
+                },
+            ];
+
+            return (
+                <ExperiencePageTemplate
+                    theme="light"
+                    title="Corporate Experience"
+                    bannerSubtitle="Alignment, Leadership & Well-Being · Tailored for Teams"
+                    intro="Facilitated experiences designed to build team alignment, sharpen leadership, and strengthen workplace well-being. Ready to bring this to your team? Reach out and choose your focus area below to start your organisation's enquiry."
+                    ctaLabel="Book a Corporate Experience"
+                    onCtaClick={() => openModal('corporate')}
+                    filters={filters}
+                    categories={categories}
+                    enquiryType="corporate"
+                    openModal={openModal}
+                />
             );
         };
 
